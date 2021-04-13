@@ -1,6 +1,6 @@
 #include "TXLib.h"
 
-void DrawBackground();
+void DrawBackground(COLORREF skyColor);
 
 void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor);
 
@@ -18,16 +18,44 @@ void DrawCat   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
 void DrawDog   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
                 double head, double hvost, double rightuho, double leftuho, double eyes);
 
-void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor);
+void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
+                double head, double hvost, double telo);
 
 int main()
     {
     txCreateWindow (1000, 800);
     txClear();
 
-    DrawBackground();
+    for (int c = 1; c <= 130; c += 20)
+        {
+    DrawBackground(RGB(0, 0, 128 + c));
+    DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
+    txSleep (500);
+        }
 
-    DrawSun (100, 100, 1,   1,   1,   TX_YELLOW, TX_RED,    0,   13, 15);
+    int x = 800;
+    while (x >= 100)
+        {
+        DrawBackground (RGB(0, 0, 255));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
+        DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
+        txSleep (150);
+        x -= 100;
+        }
+
+    DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+
+    for (int paws = 1; paws <= 110; paws += 5)
+        {
+        DrawBackground(RGB(0, 0, 255));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
+        DrawCat (550-paws, 630+paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, 0);
+        txSleep (100);
+        }
+
+ /*
+
     DrawSun (300, 100, 0.7, 0.7, 0.7, TX_RED,    TX_YELLOW, 10,  0,  10);
     DrawSun (450, 100, 0.5, 0.5, 0.5, TX_YELLOW, TX_YELLOW, 0,  -10, 0);
 
@@ -47,14 +75,14 @@ int main()
     DrawDog (650, 500, 0.8, 0.8, 0.8, TX_BROWN,  TX_BLACK, 0,   0,  0,  0,  0);
     DrawDog (700, 700, 0.6, 0.6, 0.6, TX_ORANGE, TX_BLACK, 260, 60, 60, 30, 30);
 
-    DrawMouse (140, 450, 0.5, 0.5, 0.5, TX_YELLOW, TX_BLACK);
-    DrawMouse (200, 450, 0.6, 0.6, 0.6, TX_RED,    TX_BLACK);
-    DrawMouse (80,  430, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK);
+    DrawMouse (160, 450, 0.8, 0.8, 0.8, TX_YELLOW, TX_BLACK, 0, 50, 20);
+    DrawMouse (80,  430, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, 0, 0, 0);
+*/
     }
 
-void DrawBackground()
+void DrawBackground(COLORREF skyColor)
     {
-    txSetFillColor (TX_BLUE);
+    txSetFillColor (skyColor);
     txRectangle (0, 0, 1000, 400);
 
     txSetFillColor (TX_GREEN);
@@ -259,16 +287,18 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     txFloodFill (x - (30 + rightuho)*sizeX, y - 130*sizeY);
     }
 
-void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor)
+void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
+                double head, double hvost, double telo)
     {
     txSetColor     (TX_BLACK, 2);
     txSetFillColor (teloColor);
 
-    txPie (x - 40*sizeX, y + 40*sizeY, x + 40*sizeX, y + 110*sizeY, 0, 180);
+    txPie (x - 40*sizeX, y + 40*sizeY, x + 40*sizeX, y + 110*sizeY, 0 + telo, 180);
 
     txLine (x + 30*sizeX, y + 75*sizeY,  x + 40*sizeX, y + 90*sizeY);
     txLine (x + 40*sizeX, y + 90*sizeY,  x + 30*sizeX, y + 110*sizeY);
     txLine (x + 30*sizeX, y + 110*sizeY, x + 50*sizeX, y + 125*sizeY);
+
     txLine (x,            y + 30*sizeY,  x - 40*sizeY, y + 55*sizeY);
     txLine (x - 40*sizeX, y + 55*sizeY,  x - 30*sizeX, y + 5*sizeY);
     txLine (x - 30*sizeX, y + 5*sizeY,   x,            y + 30*sizeY);

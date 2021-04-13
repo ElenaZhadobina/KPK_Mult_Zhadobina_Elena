@@ -16,26 +16,31 @@ void DrawCat   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
                 double dlinausov, double usymove, double paws, double lips);
 
 void DrawDog   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
-                double head, double hvost, double rightuho, double leftuho, double eyes);
+                double head, double hvost, double rightuho, double leftuho, double eyes, double lapy);
 
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo);
+
 void StartTitles();
 void Rassvet();
 void Nashestvie();
 void Pobeda();
 void FinishTitles();
 
+
+
 int main()
     {
     txCreateWindow (1000, 1000);
 
     txBegin();
-    StartTitles();
+
+    //StartTitles();
     Rassvet();
     //Nashestvie();
     //Pobeda();
     //FinishTitles();
+
     txEnd();
     return 0;
     }
@@ -77,20 +82,21 @@ void Rassvet()
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
         DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
         DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        txSleep (200);
+        txSleep (300);
         x -= 100;
         }
 
     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
-    txSleep (500);
+    txSleep (1000);
 
-    for (int paws = 1; paws <= 110; paws += 5)
+    for (int paws = 1; paws <= 130; paws += 5)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
         DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        DrawCat (550 - paws, 630 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, 0 + paws/15);
-        txSleep (150);
+        DrawCat (550 - paws, 630 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
+        DrawDog (100 + paws*2, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, paws%10, 100, 30, 30, paws%10);
+        txSleep (200);
         }
 
     txEnd();
@@ -270,7 +276,7 @@ void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     }
 
 void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
-              double head, double hvost, double rightuho, double leftuho, double eyes)
+              double head, double hvost, double rightuho, double leftuho, double eyes, double lapy)
     {
     txSetColor     (TX_BLACK, 3);
     txSetFillColor (teloColor);
@@ -280,14 +286,14 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
 
     txSetFillColor (elementyColor);
 
-    POINT LeftLapa [3] = {{ROUND (x - 180*sizeX), ROUND (y + 120*sizeY)},
-                          {ROUND (x - 130*sizeX), ROUND (y + 120*sizeY)},
-                          {ROUND (x - 155*sizeX), ROUND (y +  80*sizeY)}};
+    POINT LeftLapa [3] = {{ROUND (x - 180*sizeX), ROUND (y + (120 + lapy)*sizeY)},
+                          {ROUND (x - 130*sizeX), ROUND (y + (120 + lapy)*sizeY)},
+                          {ROUND (x - 155*sizeX), ROUND (y + ( 80 + lapy)*sizeY)}};
     txPolygon (LeftLapa, 3);
 
-    POINT RightLapa [3] = {{ROUND (x - 70*sizeX), ROUND (y + 120*sizeY)},
-                           {ROUND (x - 20*sizeX), ROUND (y + 120*sizeY)},
-                           {ROUND (x - 45*sizeX), ROUND (y + 80*sizeY)}};
+    POINT RightLapa [3] = {{ROUND (x - 70*sizeX), ROUND (y + (120 + lapy)*sizeY)},
+                           {ROUND (x - 20*sizeX), ROUND (y + (120 + lapy)*sizeY)},
+                           {ROUND (x - 45*sizeX), ROUND (y + ( 80 + lapy)*sizeY)}};
     txPolygon (RightLapa, 3);
 
     POINT Hvost [4] = {{ROUND (x - 200*sizeX),             ROUND (y)},
@@ -314,7 +320,7 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
 
     POINT RightUho [3] = {{ROUND (x - (40 + rightuho/4)*sizeX), ROUND (y - 120*sizeY)},
                           {ROUND (x - rightuho),                ROUND (y - 120*sizeY)},
-                          {ROUND (x - (20 + rightuho)*sizeX),   ROUND (y - 160*sizeY)}};
+                          {ROUND (x - (30 + rightuho)*sizeX),   ROUND (y - 160*sizeY)}};
     txPolygon (RightUho, 3);
 
     txSetFillColor (TX_WHITE);

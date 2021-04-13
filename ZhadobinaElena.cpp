@@ -1,13 +1,13 @@
 #include "TXLib.h"
 
 void DrawBackground();
-void DrawSun();
-void DrawHouse();
-void DrawFence();
-void DrawWood();
-void DrawCat();
-void DrawDog();
-void DrawMouse();
+void DrawSun   (int x, int y);
+void DrawHouse (int x, int y);
+void DrawFence (int x, int y);
+void DrawWood  (int x, int y);
+void DrawCat   (int x, int y);
+void DrawDog   (int x, int y);
+void DrawMouse (int x, int y);
 
 int main()
     {
@@ -15,204 +15,234 @@ int main()
     txClear();
 
     DrawBackground();
-    DrawSun();
-    DrawHouse();
-    DrawFence();
-    DrawWood();
-    DrawCat();
-    DrawDog();
-    DrawMouse();
+
+    DrawSun (100, 100);
+    DrawSun (800, 100);
+
+    DrawHouse (650, 340);
+
+    DrawFence (480, 450);
+    DrawFence (400, 450);
+    DrawFence (320, 450);
+
+    DrawWood (900, 200);
+    DrawWood (200, 200);
+
+    DrawCat (350, 740);
+    DrawCat (100, 740);
+
+    DrawDog (800, 650);
+
+    DrawMouse (140, 400);
+    DrawMouse (900, 600);
+    DrawMouse (900, 500);
     }
 
 void DrawBackground()
     {
     txSetFillColor (TX_BLUE);
-    txRectangle (0, 0, 1000, 410);
+    txRectangle (0, 0, 1000, 400);
+
     txSetFillColor (TX_GREEN);
     txRectangle (0, 400, 1000, 800);
     }
 
-void DrawSun()
+void DrawSun (int x, int y)
     {
     txSetFillColor (TX_YELLOW);
-    txCircle (100, 100, 50);
-    txCircle ( 30, 100, 10);
-    txCircle (170, 100, 10);
-    txCircle (100, 170, 10);
-    txCircle (100,  30, 10);
-    txCircle ( 45, 150, 10);
-    txCircle ( 45,  45, 10);
-    txCircle (150,  45, 10);
-    txCircle (150, 150, 10);
+    txCircle (x,    y,    50);
+    txCircle (x-70, y,    10);
+    txCircle (x+70, y,    10);
+    txCircle (x,    y+70, 10);
+    txCircle (x,    y-70, 10);
+    txCircle (x-55, y+50, 10);
+    txCircle (x-55, y-55, 10);
+    txCircle (x+50, y-55, 10);
+    txCircle (x+50, y+50, 10);
     }
 
-void DrawHouse()
+void DrawHouse (int x, int y)
     {
-    txSetColor (TX_BLACK, 3);
+    txSetColor     (TX_BLACK, 3);
     txSetFillColor (TX_ORANGE);
-    txRectangle (500, 450, 800, 250);
+    txRectangle (x-150, y+110, x+150, y-90);
+
     txSetFillColor (TX_LIGHTBLUE);
-    txRectangle (670, 300, 750, 380);
-    txLine (710, 340, 750, 340);
-    txLine (710, 300, 710, 380);
-    txLine (490, 250, 810, 250);
-    txLine (810, 250, 650, 100);
-    txLine (650, 100, 490, 250);
+
+    txRectangle (x+20, y-40, x+100, y+40);
+
+    txLine (x+60,  y,     x+100, y);
+    txLine (x+60,  y-40,  x+60,  y+40);
+    txLine (x-160, y-90,  x+160, y-90);
+    txLine (x+160, y-90,  x,     y-240);
+    txLine (x,     y-240, x-160, y-90);
+
     txSetFillColor (TX_DARKGRAY);
-    txFloodFill (650, 170);
-    txRectangle (540, 450, 620, 330);
+    txFloodFill (x, y-170);
+    txRectangle (x-110, y+110, x-30, y-10);
+
     txSetFillColor (TX_BLACK);
-    txCircle (600, 400, 5);
+    txCircle (x-50, y+60, 5);
     }
 
-void DrawFence()
+void DrawFence (int x, int y)
     {
-    txSetColor (TX_BLACK, 3);
+    txSetColor     (TX_BLACK, 3);
     txSetFillColor (TX_BROWN);
-    txRectangle (500, 450, 460, 330);
-    txLine (500, 330, 480, 300);
-    txLine (480, 300, 460, 330);
-    txFloodFill (480, 315);
-    txRectangle (460, 450, 420, 330);
-    txLine (460, 330, 440, 300);
-    txLine (440, 300, 420, 330);
-    txFloodFill (440, 315);
-    txRectangle (420, 450, 380, 330);
-    txLine (420, 330, 400, 300);
-    txLine (400, 300, 380, 330);
-    txFloodFill (400, 315);
-    txRectangle (380, 450, 340, 330);
-    txLine (380, 330, 360, 300);
-    txLine (360, 300, 340, 330);
-    txFloodFill (360, 315);
-    txRectangle (340, 450, 300, 330);
-    txLine (340, 330, 320, 300);
-    txLine (320, 300, 300, 330);
-    txFloodFill (320, 315);
-    txRectangle (300, 450, 260, 330);
-    txLine (300, 330, 280, 300);
-    txLine (280, 300, 260, 330);
-    txFloodFill (280, 315);
-    txRectangle (260, 450, 220, 330);
-    txLine (260, 330, 240, 300);
-    txLine (240, 300, 220, 330);
-    txFloodFill (240, 315);
-    txRectangle (220, 450, 180, 330);
-    txLine (220, 330, 200, 300);
-    txLine (200, 300, 180, 330);
-    txFloodFill (200, 315);
+
+    txRectangle (x+20, y, x-20, y-120);
+    txRectangle (x-20, y, x-60, y-120);
+
+    txLine (x+20, y-120, x,    y-150);
+    txLine (x,    y-150, x-20, y-120);
+    txLine (x-20, y-120, x-40, y-150);
+    txLine (x-40, y-150, x-60, y-120);
+
+    txFloodFill (x-40, y-135);
+    txFloodFill (x,    y-135);
     }
 
-void DrawWood()
+void DrawWood (int x, int y)
     {
-    txSetColor (TX_BLACK, 3);
+    txSetColor     (TX_BLACK, 3);
     txSetFillColor (TX_BROWN);
-    txRectangle (900, 200, 940, 500);
-    txSetColor (TX_GREEN, 3);
+    txRectangle (x, y, x+40, y+300);
+
+    txSetColor     (TX_GREEN, 3);
     txSetFillColor (TX_LIGHTGREEN);
-    txCircle (960, 200, 30);
-    txCircle (870, 300, 30);
-    txCircle (920, 300, 50);
-    txCircle (870, 250, 50);
-    txCircle (950, 250, 50);
-    txCircle (920, 200, 50);
-    txCircle (970, 300, 30);
-    txCircle (870, 200, 30);
+    txCircle (x+60, y,     30);
+    txCircle (x-30, y+100, 30);
+    txCircle (x+20, y+100, 50);
+    txCircle (x-30, y+50,  50);
+    txCircle (x+50, y+50,  50);
+    txCircle (x+20, y,     50);
+    txCircle (x+70, y+100, 30);
+    txCircle (x-30, y,     30);
     }
 
-void DrawCat()
+void DrawCat (int x, int y)
     {
-    txSetColor (TX_BLACK, 3);
+    txSetColor     (TX_BLACK, 3);
     txSetFillColor (TX_GRAY);
-    txCircle (375, 580, 50);
-    txLine (300, 750, 450, 750);
-    txLine (450, 750, 375, 550);
-    txLine (375, 550, 300, 750);
-    txFloodFill (360, 700);
-    txCircle (375, 580, 50);
-    txLine (330, 560, 330, 500);
-    txLine (330, 500, 360, 530);
-    txFloodFill (340, 520);
-    txLine (420, 560, 420, 500);
-    txLine (420, 500, 390, 530);
-    txFloodFill (410, 540);
+
+    txLine (x-50,  y+10,  x+100, y+10);
+    txLine (x+100, y+10,  x+25,  y-190);
+    txLine (x+25,  y-190, x-50,  y+10);
+
+    txCircle (x+25, y-160, 50);
+    txCircle (x+25, y-160, 50);
+
+    txLine (x-20, y-180, x-20, y-240);
+    txLine (x-20, y-240, x+10, y-210);
+    txLine (x+70, y-180, x+70, y-240);
+    txLine (x+70, y-240, x+40, y-210);
+
+    txFloodFill (x-10, y-220);
+    txFloodFill (x+10, y-40);
+    txFloodFill (x+60, y-200);
+
     txSetFillColor (TX_BLACK);
-    txCircle (350, 570, 5);
-    txCircle (390, 570, 5);
-    txCircle (370, 590, 5);
-    txLine (355, 590, 310, 590);
-    txLine (355, 590, 310, 580);
-    txLine (355, 590, 310, 600);
-    txLine (385, 590, 430, 590);
-    txLine (385, 590, 430, 600);
-    txLine (385, 590, 430, 580);
+
+    txCircle (x,    y-170, 5);
+    txCircle (x+40, y-170, 5);
+    txCircle (x+20, y-150, 5);
+
+    txLine (x+5,  y-150, x-40, y-150);
+    txLine (x+5,  y-150, x-40, y-160);
+    txLine (x+5,  y-150, x-40, y-140);
+    txLine (x+35, y-150, x+80, y-150);
+    txLine (x+35, y-150, x+80, y-140);
+    txLine (x+35, y-150, x+80, y-160);
+
     txSetFillColor (TX_PINK);
-    txEllipse (380, 610, 360, 620);
+    txEllipse (x+30, y-130, x+10, y-120);
+
     txSetFillColor (TX_GRAY);
-    txEllipse (280, 750, 340, 680);
-    txEllipse (470, 750, 410, 680);
-    txRectangle (353, 680, 370, 740);
-    txRectangle (383, 740, 400, 680);
-    txCircle (360, 740, 15);
-    txCircle (393, 740, 15);
+
+    txEllipse (x-70,  y+10, x-10, y-60);
+    txEllipse (x+120, y+10, x+60, y-60);
+
+    txRectangle (x+3,  y-60, x+20, y);
+    txRectangle (x+33, y,    x+50, y-60);
+
+    txCircle (x+10, y, 15);
+    txCircle (x+43, y, 15);
     }
 
-void DrawDog()
+void DrawDog (int x, int y)
     {
-    txSetColor (TX_BLACK, 3);
+    txSetColor     (TX_BLACK, 3);
     txSetFillColor (TX_BROWN);
-    txRectangle (600, 750, 800, 650);
-    txRectangle (620, 550, 700, 610);
-    txLine (620, 770, 670, 770);
-    txLine (670, 770, 645, 730);
-    txLine (645, 730, 620, 770);
+
+    txRectangle (x-200, y+100, x,     y);
+    txRectangle (x-180, y-100, x-100, y-40);
+
+    txLine (x-180, y+120, x-130, y+120);
+    txLine (x-130, y+120, x-155, y+80);
+    txLine (x-155, y+80,  x-180, y+120);
+
     txSetFillColor (TX_BLACK);
-    txFloodFill (645, 760);
-    txLine (730, 770, 780, 770);
-    txLine (780, 770, 755, 730);
-    txLine (755, 730, 730, 770);
-    txFloodFill (755, 760);
-    txLine (600, 650, 580, 690);
-    txLine (580, 690, 550, 700);
-    txLine (550, 700, 560, 660);
-    txLine (560, 660, 600, 650);
-    txFloodFill (565, 690);
-    txLine (720, 520, 740, 480);
-    txLine (740, 480, 760, 520);
-    txLine (760, 520, 720, 520);
-    txFloodFill (740, 500);
+
+    txLine (x-70,  y+120, x-20,  y+120);
+    txLine (x-20,  y+120, x-45,  y+80);
+    txLine (x-45,  y+80,  x-70,  y+120);
+    txLine (x-200, y,     x-220, y+40);
+    txLine (x-220, y+40,  x-250, y+50);
+    txLine (x-250, y+50,  x-240, y+10);
+    txLine (x-240, y+10,  x-200, y);
+    txLine (x-80,  y-130, x-60,  y-170);
+    txLine (x-60,  y-170, x-40,  y-130);
+    txLine (x-40,  y-130, x-80,  y-130);
+
+    txFloodFill (x-155, y+110);
+    txFloodFill (x-155, y+85);
+    txFloodFill (x-45,  y+110);
+    txFloodFill (x-45,  y+85);
+    txFloodFill (x-235, y+40);
+    txFloodFill (x-60,  y-150);
+
     txSetFillColor (TX_BROWN);
-    txCircle (750, 580, 70);
+    txCircle (x-50, y-70, 70);
+
     txSetFillColor (TX_WHITE);
-    txCircle (730, 555, 20);
+    txCircle (x-70, y-95, 20);
+
     txSetFillColor (TX_BLACK);
-    txCircle (625, 555, 20);
-    txCircle (720, 560, 10);
-    txLine (765, 530, 800, 535);
-    txLine (800, 535, 790, 495);
-    txLine (790, 495, 765, 530);
-    txSetFillColor (TX_BLACK);
-    txFloodFill (790, 520);
-    txFloodFill (780, 525);
+
+    txCircle (x-175, y-95, 20);
+    txCircle (x-80,  y-90, 10);
+
+    txLine (x-35, y-120, x,    y-115);
+    txLine (x,    y-115, x-10, y-155);
+    txLine (x-10, y-155, x-35, y-120);
+
+    txFloodFill (x-10, y-130);
+    txFloodFill (x-20, y-125);
+
     txSetColor (TX_BLACK, 6);
-    txLine (685, 610, 620, 630);
+    txLine (x-115, y-40, x-180, y-20);
     }
 
-void DrawMouse()
+void DrawMouse (int x, int y)
     {
-    txSetColor (TX_BLACK, 2);
+    txSetColor     (TX_BLACK, 2);
     txSetFillColor (TX_YELLOW);
-    txPie (100, 480, 180, 550, 0, 180);
-    txLine (170, 515, 180, 530);
-    txLine (180, 530, 170, 550);
-    txLine (170, 550, 190, 565);
-    txCircle (110, 445, 10);
-    txCircle (140, 470, 10);
-    txLine (140, 470, 100, 495);
-    txLine (100, 495, 110, 445);
-    txLine (110, 445, 140, 470);
-    txFloodFill (120, 480);
+
+    txPie (x-40, y+40, x+40, y+110, 0, 180);
+
+    txLine (x+30, y+75,  x+40, y+90);
+    txLine (x+40, y+90,  x+30, y+110);
+    txLine (x+30, y+110, x+50, y+125);
+    txLine (x,    y+30,  x-40, y+55);
+    txLine (x-40, y+55,  x-30, y+5);
+    txLine (x-30, y+5,   x,    y+30);
+
+    txCircle (x-30, y+5,  10);
+    txCircle (x,    y+30, 10);
+
+    txFloodFill (x-20, y+40);
+
     txSetFillColor (TX_BLACK);
-    txCircle (115, 460, 3);
-    txCircle (125, 467, 3);
+    txCircle (x-25, y+20, 3);
+    txCircle (x-15, y+27, 3);
     }

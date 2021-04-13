@@ -1,6 +1,6 @@
 #include "TXLib.h"
 
-void DrawBackground(COLORREF skyColor, COLORREF GruntColor);
+void DrawBackground (COLORREF skyColor, COLORREF GruntColor);
 
 void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor);
 
@@ -16,7 +16,7 @@ void DrawCat   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
                 double dlinausov, double usymove, double paws, double lips);
 
 void DrawDog   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
-                double head, double hvost, double rightuho, double leftuho, double eyes, double lapy);
+                double head, double past, double hvost, double uho, double eyes, double lapy);
 
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo);
@@ -27,21 +27,20 @@ void Nashestvie();
 void Pobeda();
 void FinishTitles();
 
-
-
 int main()
     {
     txCreateWindow (1000, 1000);
 
     txBegin();
 
-    //StartTitles();
+    StartTitles();
     Rassvet();
-    //Nashestvie();
-    //Pobeda();
-    //FinishTitles();
+    Nashestvie();
+    Pobeda();
+    FinishTitles();
 
     txEnd();
+
     return 0;
     }
 
@@ -53,10 +52,13 @@ void StartTitles()
         txClear();
         txSetFillColor (RGB(0 + t*10, 128 + t, 0 + t*15));
         txSetColor (TX_YELLOW);
+
         txSelectFont ("Arial Black", 150);
         txTextOut (-450 + t*10, 300, "НАШЕСТВИЕ");
+
         txSelectFont ("Arial Black", 130);
         txTextOut (1100 - t*15, 500, "ГРЫЗУНОВ");
+
         txSleep (50);
         t++;
         }
@@ -67,11 +69,11 @@ void Rassvet()
     {
     txBegin();
 
-    for (int t = 1; t <= 130; t += 20)
+        for (int t = 1; t <= 130; t += 20)
         {
         DrawBackground (RGB (0, 0 + t*2, 128 + t), RGB (0, 128 + t, 0 + t));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
-        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
+        DrawWood  (900, 120, 1, 1, 1, TX_BROWN,  TX_LIGHTGREEN, 0, 0);
         txSleep (800);
         }
 
@@ -80,51 +82,165 @@ void Rassvet()
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
-        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
-        DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
+        DrawWood  (900, 120, 1, 1, 1, TX_BROWN,  TX_LIGHTGREEN, 0, x%2);
+        DrawSun   (  x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, x%10, 8, x%10);
         txSleep (300);
-        x -= 100;
+        x -= 55;
         }
 
     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
     txSleep (1000);
 
-    for (int paws = 1; paws <= 130; paws += 5)
+    for (int paws = 1; paws <= 120; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
-        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        DrawCat (550 - paws, 630 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
-        DrawDog (100 + paws*2, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, paws%10, 100, 30, 30, paws%10);
-        txSleep (200);
+        DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
+        DrawWood  (900, 120, 1, 1, 1, TX_BROWN,  TX_LIGHTGREEN, 0, paws%2);
+        DrawCat   (600 - paws, 550 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
+        DrawDog   ( 50 + paws*2, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
+        txSleep   (200);
         }
 
+    txSetColor (TX_WHITE);
+    txSelectFont ("Arial Black", 30);
+    txTextOut (570, 500, "Доброе утро!");
+    txSleep (2000);
     txEnd();
     }
+
 void Nashestvie()
     {
     txBegin();
 
-    for (int t = 20; t <= 600; t += 25)
+    for (int t = 20; t <= 500; t += 25)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
-        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
-        DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
-        DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        DrawCat   (460, 750 + t%2, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0 + t%3, 110 + t%2, 0 + t%10);
-        DrawMouse (160 + t, 450, 0.8, 0.8, 0.8, TX_YELLOW, TX_BLACK, 0, 50, 20);
-        DrawMouse (80, 430 + t, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, 0, 0, 0);
+
+        DrawMouse (100 + t,    450 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
+        DrawMouse (500 - t*2,  400 + t,   0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
+        DrawMouse (400 + t,   1000 - t,   0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
+        DrawMouse (100 + t*2,  430 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
+
+        DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood  (900, 120, 1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, t%2);
+        DrawSun   (100, 100, 1,   1,   1,   TX_YELLOW,    TX_YELLOW, 0, 8, 10);
+        DrawDog   (250, 700, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 260, 0, t%10, 100, 30, t%10);
+        DrawCat   (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0 + t%3, 110 + t%2, 0 + t%10);
+
+        txSetColor (TX_WHITE);
+        txSelectFont ("Arial Black", 30);
+        txTextOut (550, 600, "Мыши!");
         txSleep   (500);
         }
 
     txEnd();
     }
+
 void Pobeda()
-{
-}
+    {
+    txBegin();
+
+    for (int t = 10; t <= 100; t += 15)
+        {
+        DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+
+        DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood  (900, 120, 1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, t%2);
+        DrawSun   (100, 100, 1,   1,   1,   TX_YELLOW,    TX_YELLOW, 0, 8, 20);
+        DrawDog   (250, 700, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 260 + t%10, 0, t%10, 100, 30, 0);
+        DrawCat   (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, 0, 0 );
+
+        txSetColor (TX_WHITE);
+        txSelectFont ("Arial Black", 30);
+        txTextOut (150, 550, "Надо строить забор!");
+        txSleep (300);
+        }
+
+    for (int y = 10; y <= 300; y += 15)
+        {
+        DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+
+        DrawHouse (650,     340,     1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood  (900,     120,     1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, 0);
+        DrawSun   (100,     100,     1,   1,   1,   TX_YELLOW,    TX_YELLOW, 0, 8, 20);
+        DrawDog   (250 + y, 700 - y, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 260, y%10, y%10, 100, 30, 0);
+        DrawCat   (460 + y, 750 - y, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, y%10, y%10, 0, 0 );
+        txSleep   (150);
+        }
+
+    txSleep (2000);
+
+    DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+    DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+    DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 20);
+
+    DrawFence ( 480, 450, 1, 1, TX_BROWN);
+    DrawFence ( 400, 450, 1, 1, TX_BROWN);
+    DrawFence ( 320, 450, 1, 1, TX_BROWN);
+    DrawFence ( 240, 450, 1, 1, TX_BROWN);
+    DrawFence ( 160, 450, 1, 1, TX_BROWN);
+    DrawFence (  80, 450, 1, 1, TX_BROWN);
+    DrawFence (   0, 450, 1, 1, TX_BROWN);
+    DrawFence ( 860, 450, 1, 1, TX_BROWN);
+    DrawFence ( 940, 450, 1, 1, TX_BROWN);
+    DrawFence (1020, 450, 1, 1, TX_BROWN);
+
+    for (int paws = 1; paws <= 120; paws += 3)
+        {
+        DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+
+        DrawFence ( 480, 450, 1, 1, TX_BROWN);
+        DrawFence ( 400, 450, 1, 1, TX_BROWN);
+        DrawFence ( 320, 450, 1, 1, TX_BROWN);
+        DrawFence ( 240, 450, 1, 1, TX_BROWN);
+        DrawFence ( 160, 450, 1, 1, TX_BROWN);
+        DrawFence (  80, 450, 1, 1, TX_BROWN);
+        DrawFence (   0, 450, 1, 1, TX_BROWN);
+        DrawFence ( 860, 450, 1, 1, TX_BROWN);
+        DrawFence ( 940, 450, 1, 1, TX_BROWN);
+        DrawFence (1020, 450, 1, 1, TX_BROWN);
+
+        DrawSun  (100,        100,        1,   1,   1,   TX_YELLOW,    TX_YELLOW, paws%5, 8, paws%10);
+        DrawCat  (600 - paws, 550 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
+        DrawDog  (750 + paws, 550 + paws, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 0, paws%2, paws%10, 0, 0, paws%10);
+        DrawWood (100,        300,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+        DrawWood (150,        500,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+        DrawWood (250,        400,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+
+        txSleep (150);
+        }
+
+    txSetColor (TX_WHITE);
+    txSelectFont ("Arial Black", 30);
+    txTextOut (480, 550, "УРА!");
+    txSleep (2000);
+
+    txEnd();
+    }
+
 void FinishTitles()
-  {
-  }
+    {
+    int t = 0;
+    while (t <= 400)
+        {
+        txClear();
+        txSetFillColor (TX_BLACK);
+        txSetColor (TX_WHITE);
+        txSelectFont ("Arial Black", 70);
+        txTextOut (200, 1000 - t*2, "Мультфильм подготовила");
+        txTextOut (290, 1050 - t*2, "Жадобина Елена");
+        txTextOut (300, 1100 - t*2, "г. Магнитогорск");
+        txTextOut (320, 1150 - t*2, "МАОУ МЛ №1");
+        txSleep (100);
+        t+= 5;
+        }
+
+    txSleep (2000);
+    txClear();
+    }
+
 void DrawBackground(COLORREF SkyColor, COLORREF GruntColor)
     {
     txSetFillColor (SkyColor);
@@ -165,8 +281,9 @@ void DrawSun (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF c
 
 void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF domColor, COLORREF roofColor, COLORREF WindowColor)
     {
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (domColor);
+
     txRectangle (x - 150*sizeX, y + 110*sizeY, x + 150*sizeX, y - 90*sizeY);
 
     txSetFillColor (WindowColor);
@@ -190,42 +307,48 @@ void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
 
 void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor)
     {
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (zaborColor);
 
     txRectangle (x + 20*sizeX, y, x - 20*sizeX, y - 120*sizeY);
+    txRectangle (x - 20*sizeX, y, x - 60*sizeX, y - 120*sizeY);
 
     POINT Verhushka [3] = {{ROUND (x + 20*sizeX), ROUND (y - 120*sizeY)},
                            {ROUND (x),            ROUND (y - 150*sizeY)},
                            {ROUND (x - 20*sizeX), ROUND (y - 120*sizeY)}};
     txPolygon (Verhushka, 3);
+
+    POINT Verh [3] = {{ROUND (x - 20*sizeX), ROUND (y - 120*sizeY)},
+                      {ROUND (x - 40*sizeX), ROUND (y - 150*sizeY)},
+                      {ROUND (x - 60*sizeX), ROUND (y - 120*sizeY)}};
+    txPolygon (Verh, 3);
     }
 
 void DrawWood (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF stvolColor, COLORREF listColor,
                double stvol, double sheet)
     {
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (stvolColor);
 
     txRectangle (x, y, x + (40 + stvol)*sizeX, y + 300*sizeY);
 
-    txSetColor     (TX_GREEN, 3);
+    txSetColor (TX_GREEN, 3);
     txSetFillColor (listColor);
 
-    txCircle (x + (60 - sheet)*sizeX, y,             30*sizeR);
-    txCircle (x - (30 + sheet)*sizeX, y + 100*sizeY, 30*sizeR);
-    txCircle (x + (20 - sheet)*sizeX, y + 100*sizeY, 50*sizeR);
-    txCircle (x - (30 + sheet)*sizeX, y +  50*sizeY, 50*sizeR);
-    txCircle (x + (50 - sheet)*sizeX, y +  50*sizeY, 50*sizeR);
-    txCircle (x + (20 - sheet)*sizeX, y,             50*sizeR);
-    txCircle (x + (70 - sheet)*sizeX, y + 100*sizeY, 30*sizeR);
-    txCircle (x - (30 + sheet)*sizeX, y,             30*sizeR);
+    txCircle (x + (60 - sheet*4)*sizeX, y + sheet,               30*sizeR);
+    txCircle (x - (30 + sheet*4)*sizeX, y + (100+ sheet)*sizeY,  30*sizeR);
+    txCircle (x + (20 - sheet)*sizeX,   y + 100*sizeY,           50*sizeR);
+    txCircle (x - (30 + sheet)*sizeX,   y + 50*sizeY,            50*sizeR);
+    txCircle (x + (50 - sheet)*sizeX,   y + 50*sizeY,            50*sizeR);
+    txCircle (x + (20 - sheet)*sizeX,   y,                       50*sizeR);
+    txCircle (x + (70 - sheet*4)*sizeX, y + (100 + sheet)*sizeY, 30*sizeR);
+    txCircle (x - (30 + sheet*4)*sizeX, y + sheet,               30*sizeR);
     }
 
 void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF mordochkaColor,
               double dlinausov, double usymove, double paws, double lips)
     {
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (teloColor);
 
     POINT Telo [3] = {{ROUND (x -  50*sizeX), ROUND (y +  10*sizeY)},
@@ -276,9 +399,9 @@ void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     }
 
 void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
-              double head, double hvost, double rightuho, double leftuho, double eyes, double lapy)
+              double head, double past, double hvost, double uho, double eyes, double lapy)
     {
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (teloColor);
 
     txRectangle (x - 200*sizeX,          y + 100*sizeY, x,            y);
@@ -302,26 +425,21 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
                        {ROUND (x - (240 - hvost/2)*sizeX), ROUND (y + (10 - hvost)*sizeY)}};
     txPolygon (Hvost, 4);
 
-    POINT LeftUho [3] = {{ROUND (x - (80 - leftuho)*sizeX), ROUND (y - 130*sizeY)},
-                         {ROUND (x - (60 - leftuho)*sizeX), ROUND (y - 170*sizeY)},
-                         {ROUND (x - (40 - leftuho)*sizeX), ROUND (y - 130*sizeY)}};
-    txPolygon (LeftUho, 3);
-
     txSetColor (TX_BLACK, 6);
 
-    txLine (x - 50*sizeX, y - 50*sizeY, x - (180 - head)*sizeX, y - 20*sizeY);
+    txLine (x - 50*sizeX, y - 50*sizeY, x - (180 - head)*sizeX, y - (20 + past)*sizeY);
 
-    txSetColor     (TX_BLACK, 3);
+    txSetColor (TX_BLACK, 3);
     txSetFillColor (teloColor);
 
     txCircle (x - 50*sizeX, y - 70*sizeY, 70*sizeR);
 
     txSetFillColor (elementyColor);
 
-    POINT RightUho [3] = {{ROUND (x - (40 + rightuho/4)*sizeX), ROUND (y - 120*sizeY)},
-                          {ROUND (x - rightuho),                ROUND (y - 120*sizeY)},
-                          {ROUND (x - (30 + rightuho)*sizeX),   ROUND (y - 160*sizeY)}};
-    txPolygon (RightUho, 3);
+    POINT Uho [3] = {{ROUND (x - (60 + uho/4)*sizeX), ROUND (y - 120*sizeY)},
+                     {ROUND (x - (20 + uho)*sizeX),   ROUND (y - 120*sizeY)},
+                     {ROUND (x - (80 + uho)*sizeX),   ROUND (y - 160*sizeY)}};
+    txPolygon (Uho, 3);
 
     txSetFillColor (TX_WHITE);
 
@@ -338,17 +456,17 @@ void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
     {
     txSetColor (teloColor, 4);
 
-    txLine (x + 30*sizeX, y + 60*sizeY,  x + 40*sizeX, y + 90*sizeY);
-    txLine (x + 40*sizeX, y + 90*sizeY,  x + 30*sizeX, y + (110-hvost)*sizeY);
+    txLine (x + 30*sizeX, y + 60*sizeY, x + 40*sizeX, y + 90*sizeY);
+    txLine (x + 40*sizeX, y + 90*sizeY, x + 30*sizeX, y + (110-hvost)*sizeY);
 
     txSetColor (TX_BLACK, 2);
     txSetFillColor (teloColor);
 
-    txPie (x - 40*sizeX, y + 40*sizeY, x + 40*sizeX, y + 110*sizeY, 0 + telo, 180);
+    txPie (x - 40*sizeX, y + 40*sizeY, x + 40*sizeX, y + 110*sizeY, telo, 180 + telo);
 
-    POINT Mordochka [3] = {{ROUND (x),            ROUND (y + 30*sizeY)},
-                           {ROUND (x - 40*sizeX), ROUND (y + 55*sizeY)},
-                           {ROUND (x - 30*sizeX), ROUND (y +  5*sizeY)}};
+    POINT Mordochka [3] = {{ROUND (x),            ROUND (y + (30 + head)*sizeY)},
+                           {ROUND (x - 40*sizeX), ROUND (y + (55 - head)*sizeY)},
+                           {ROUND (x - 30*sizeX), ROUND (y + ( 5 + head)*sizeY)}};
     txPolygon (Mordochka, 3);
 
     txCircle (x - 30*sizeX, y +  5*sizeY, 10*sizeR);

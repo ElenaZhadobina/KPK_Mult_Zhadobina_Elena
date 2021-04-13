@@ -91,20 +91,23 @@ void Rassvet()
     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
     txSleep (1000);
 
-    for (int paws = 1; paws <= 120; paws += 3)
+    for (int paws = 1; paws <= 50; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
         DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
         DrawWood  (900, 120, 1, 1, 1, TX_BROWN,  TX_LIGHTGREEN, 0, paws%2);
-        DrawCat   (600 - paws, 550 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
-        DrawDog   ( 50 + paws*2, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
+        DrawCat   (600 - paws*2, 550 + paws*2, 0.3 + paws*0.01, 0.3 + paws*0.01, 0.3 + paws*0.01, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws*2, paws/10);
+        DrawDog   ( 50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
         txSleep   (200);
         }
 
     txSetColor (TX_WHITE);
     txSelectFont ("Arial Black", 30);
-    txTextOut (570, 500, "Доброе утро!");
+    txTextOut (570, 500, "Отличный день!");
+    txSleep (2000);
+    txSelectFont ("Arial Black", 30);
+    txTextOut (350, 700, "Никто не сможет испортить настроение!");
     txSleep (2000);
     txEnd();
     }
@@ -121,6 +124,7 @@ void Nashestvie()
         DrawMouse (500 - t*2,  400 + t,   0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
         DrawMouse (400 + t,   1000 - t,   0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
         DrawMouse (100 + t*2,  430 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
+        DrawMouse (300 - t,    900 - t*2, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10,  t%10);
 
         DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
         DrawWood  (900, 120, 1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, t%2);
@@ -240,6 +244,7 @@ void FinishTitles()
     txSleep (2000);
     txClear();
     }
+
 
 void DrawBackground(COLORREF SkyColor, COLORREF GruntColor)
     {

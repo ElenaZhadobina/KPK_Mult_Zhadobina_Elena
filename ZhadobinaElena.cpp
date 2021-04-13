@@ -20,39 +20,16 @@ void DrawDog   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
 
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo);
+void StartTitles();
 
 int main()
     {
-    txCreateWindow (1000, 800);
-    txClear();
-
-    for (int c = 1; c <= 130; c += 20)
-        {
-    DrawBackground(RGB(0, 0, 128 + c));
-    DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
-    txSleep (500);
-        }
-
-    int x = 800;
-    while (x >= 100)
-        {
-        DrawBackground (RGB(0, 0, 255));
-        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
-        DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        txSleep (150);
-        x -= 100;
-        }
-
-    DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
-
-    for (int paws = 1; paws <= 110; paws += 5)
-        {
-        DrawBackground(RGB(0, 0, 255));
-        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
-        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
-        DrawCat (550-paws, 630+paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, 0);
-        txSleep (100);
-        }
+    txCreateWindow (1000, 1000);
+    txBegin();
+    StartTitles();
+    txEnd();
+    return 0;
+    }
 
  /*
 
@@ -78,8 +55,57 @@ int main()
     DrawMouse (160, 450, 0.8, 0.8, 0.8, TX_YELLOW, TX_BLACK, 0, 50, 20);
     DrawMouse (80,  430, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, 0, 0, 0);
 */
+void StartTitles()
+    {
+    int t = 0;
+    while (t <= 50)
+        {
+        txClear();
+        txSetFillColor (TX_YELLOW);
+        txSetColor (TX_GREEN);
+        txSelectFont ("Arial", 150);
+        txTextOut (-450 + t*10, 300, "Один день");
+        txSelectFont ("Arial", 110);
+        txTextOut (1100 - t*20, 500, "из деревенской жизни");
+        txSleep (100);
+        t++;
+        }
+    DrawSun (150, 750, 0.8, 0.8, 0.8, TX_ORANGE, TX_ORANGE, 0, 0, 0);
+    txSleep (500);
+    DrawSun (800, 200, 1,   1,   1,   TX_ORANGE, TX_ORANGE, 0, 0, 0);
     }
 
+/*void Rassvet();
+    {
+    for (int c = 1; c <= 130; c += 20)
+        {
+    DrawBackground(RGB(0, 0, 128 + c));
+    DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
+    txSleep (500);
+        }
+
+int x = 800;
+    while (x >= 100)
+        {
+        DrawBackground (RGB(0, 0, 255));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(0, 0, 255));
+        DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
+        txSleep (150);
+        x -= 100;
+        }
+
+    DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+
+for (int paws = 1; paws <= 110; paws += 5)
+        {
+        DrawBackground(RGB(0, 0, 255));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 0);
+        DrawCat (550-paws, 630+paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, 0);
+        txSleep (100);
+        }
+         }
+      */
 void DrawBackground(COLORREF skyColor)
     {
     txSetFillColor (skyColor);

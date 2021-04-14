@@ -1,13 +1,13 @@
 //{===========================================================================
 //! @file       ZhadobinaElena.cpp
 //!
-//! @brief      Мультфильм "Нашествие грызунов".
+//! @brief      РњСѓР»СЊС‚С„РёР»СЊРј "РќР°С€РµСЃС‚РІРёРµ РіСЂС‹Р·СѓРЅРѕРІ".
 //!
-//!             Пример создания анимации с помощью TXLib.
+//!             РџСЂРёРјРµСЂ СЃРѕР·РґР°РЅРёСЏ Р°РЅРёРјР°С†РёРё СЃ РїРѕРјРѕС‰СЊСЋ TXLib.
 //!
 //!             $Date: 2021-04-14 $
-//!             $Copyright: (C) mordovina174 (Жадобина Елена Владимировна) <mordovina174@gmail.com> $
-//          (C) Жадобина Елена, г. Магнитогорск, 2021
+//!             $Copyright: (C) mordovina174 (Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР° Р’Р»Р°РґРёРјРёСЂРѕРІРЅР°) <mordovina174@gmail.com> $
+//          (C) Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР°, Рі. РњР°РіРЅРёС‚РѕРіРѕСЂСЃРє, 2021
 //}===========================================================================
 
 #include "TXLib.h"
@@ -66,10 +66,10 @@ void StartTitles()
         txSetColor (TX_YELLOW);
 
         txSelectFont ("Arial Black", 150);
-        txTextOut    (-450 + t*10, 300, "НАШЕСТВИЕ");
+        txTextOut    (-450 + t*10, 300, "РќРђРЁР•РЎРўР’РР•");
 
         txSelectFont ("Arial Black", 130);
-        txTextOut    (1100 - t*15, 500, "ГРЫЗУНОВ");
+        txTextOut    (1100 - t*15, 500, "Р“Р Р«Р—РЈРќРћР’");
         txSleep      (50);
         t++;
         }
@@ -116,10 +116,10 @@ void Rassvet()
 
     txSetColor   (TX_WHITE);
     txSelectFont ("Arial Black", 30);
-    txTextOut    (570, 500, "Отличный день!");
+    txTextOut    (570, 500, "РћС‚Р»РёС‡РЅС‹Р№ РґРµРЅСЊ!");
     txSleep      (2000);
     txSelectFont ("Arial Black", 30);
-    txTextOut    (350, 700, "Никто не сможет испортить настроение!");
+    txTextOut    (350, 700, "РќРёРєС‚Рѕ РЅРµ СЃРјРѕР¶РµС‚ РёСЃРїРѕСЂС‚РёС‚СЊ РЅР°СЃС‚СЂРѕРµРЅРёРµ!");
     txSleep      (2000);
 
     txEnd();
@@ -147,7 +147,7 @@ void Nashestvie()
 
         txSetColor   (TX_WHITE);
         txSelectFont ("Arial Black", 30);
-        txTextOut    (550, 600, "Мыши!!!");
+        txTextOut    (550, 600, "РњС‹С€Рё!!!");
 
         txSleep   (500);
         }
@@ -171,7 +171,7 @@ void Pobeda()
 
         txSetColor (TX_WHITE);
         txSelectFont ("Arial Black", 30);
-        txTextOut (150, 550, "Строим защиту!");
+        txTextOut (150, 550, "РЎС‚СЂРѕРёРј Р·Р°С‰РёС‚Сѓ!");
         txSleep (300);
         }
 
@@ -201,7 +201,7 @@ void Pobeda()
 
     txSetColor (TX_BLACK);
     txSelectFont ("Arial Black", 60);
-    txTextOut (350, 550, "Некоторое время спустя...");
+    txTextOut (350, 550, "РќРµРєРѕС‚РѕСЂРѕРµ РІСЂРµРјСЏ СЃРїСѓСЃС‚СЏ...");
     txSleep (1500);
 
     for (int paws = 1; paws <= 120; paws += 3)
@@ -232,7 +232,7 @@ void Pobeda()
 
     txSetColor (TX_WHITE);
     txSelectFont ("Arial Black", 30);
-    txTextOut (480, 550, "УРА!");
+    txTextOut (480, 550, "РЈР Рђ!");
     txSleep (2000);
 
     txEnd();
@@ -248,10 +248,10 @@ void FinishTitles()
         txSetColor     (TX_WHITE);
         txSelectFont    ("Arial Black", 70);
 
-        txTextOut (200, 1000 - t*2, "Мультфильм подготовила");
-        txTextOut (290, 1050 - t*2, "Жадобина Елена");
-        txTextOut (300, 1100 - t*2, "г. Магнитогорск");
-        txTextOut (320, 1150 - t*2, "МАОУ МЛ №1");
+        txTextOut (200, 1000 - t*2, "РњСѓР»СЊС‚С„РёР»СЊРј РїРѕРґРіРѕС‚РѕРІРёР»Р°");
+        txTextOut (290, 1050 - t*2, "Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР°");
+        txTextOut (300, 1100 - t*2, "Рі. РњР°РіРЅРёС‚РѕРіРѕСЂСЃРє");
+        txTextOut (320, 1150 - t*2, "РњРђРћРЈ РњР› в„–1");
         txSleep   (100);
         t+= 5;
         }

@@ -1,13 +1,14 @@
 //{===========================================================================
 //! @file       ZhadobinaElena.cpp
 //!
-//! @brief      РњСѓР»СЊС‚С„РёР»СЊРј "РќР°С€РµСЃС‚РІРёРµ РіСЂС‹Р·СѓРЅРѕРІ".
+//! @brief      Мультфильм "Нашествие грызунов".
 //!
-//!             РџСЂРёРјРµСЂ СЃРѕР·РґР°РЅРёСЏ Р°РЅРёРјР°С†РёРё СЃ РїРѕРјРѕС‰СЊСЋ TXLib.
+//!             Пример создания мультфильма с помощью TXLib.
+//!             КПК по С++ от МФТИ.
 //!
 //!             $Date: 2021-04-14 $
-//!             $Copyright: (C) mordovina174 (Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР° Р’Р»Р°РґРёРјРёСЂРѕРІРЅР°) <mordovina174@gmail.com> $
-//          (C) Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР°, Рі. РњР°РіРЅРёС‚РѕРіРѕСЂСЃРє, 2021
+//!             $Copyright: (C) mordovina174 (Жадобина Елена Владимировна) <mordovina174@gmail.com> $
+//          (C) Жадобина Елена, г.Магнитогорск, 2021
 //}===========================================================================
 
 #include "TXLib.h"
@@ -62,15 +63,15 @@ void StartTitles()
     while (t <= 50)
         {
         txClear();
-        txSetFillColor (RGB (0 + t*10, 128 + t, 0 + t*15));
+        txSetFillColor (RGB(0 + t*10, 128 + t, 0 + t*15));
         txSetColor (TX_YELLOW);
 
         txSelectFont ("Arial Black", 150);
-        txTextOut    (-450 + t*10, 300, "РќРђРЁР•РЎРўР’РР•");
+        txTextOut (-450 + t*10, 300, "НАШЕСТВИЕ");
 
         txSelectFont ("Arial Black", 130);
-        txTextOut    (1100 - t*15, 500, "Р“Р Р«Р—РЈРќРћР’");
-        txSleep      (50);
+        txTextOut (1100 - t*15, 500, "ГРЫЗУНОВ");
+        txSleep (50);
         t++;
         }
 
@@ -86,7 +87,7 @@ void Rassvet()
         DrawBackground (RGB (0, 0 + t*2, 128 + t), RGB (0, 128 + t, 0 + t));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
         DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
-        txSleep   (800);
+        txSleep (800);
         }
 
     int x = 800;
@@ -95,8 +96,8 @@ void Rassvet()
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
         DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, x%2);
-        DrawSun   (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, x%10, 8, x%10);
-        txSleep   (300);
+        DrawSun   (  x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, x%10, 8, x%10);
+        txSleep (300);
         x -= 55;
         }
 
@@ -106,22 +107,21 @@ void Rassvet()
     for (int paws = 1; paws <= 50; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
-        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB (255, 255, 128));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
         DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
         DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, paws%2);
         DrawCat   (600 - paws*2, 550 + paws*2, 0.3 + paws*0.01, 0.3 + paws*0.01, 0.3 + paws*0.01, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws*2, paws/10);
-        DrawDog   (50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
+        DrawDog   ( 50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
         txSleep   (200);
         }
 
-    txSetColor   (TX_WHITE);
+    txSetColor (TX_WHITE);
     txSelectFont ("Arial Black", 30);
-    txTextOut    (570, 500, "РћС‚Р»РёС‡РЅС‹Р№ РґРµРЅСЊ!");
-    txSleep      (2000);
+    txTextOut (570, 500, "Отличный день!");
+    txSleep (2000);
     txSelectFont ("Arial Black", 30);
-    txTextOut    (350, 700, "РќРёРєС‚Рѕ РЅРµ СЃРјРѕР¶РµС‚ РёСЃРїРѕСЂС‚РёС‚СЊ РЅР°СЃС‚СЂРѕРµРЅРёРµ!");
-    txSleep      (2000);
-
+    txTextOut (350, 700, "Никто не сможет испортить настроение!");
+    txSleep (2000);
     txEnd();
     }
 
@@ -139,15 +139,15 @@ void Nashestvie()
         DrawMouse (100 + t*2,  430 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
         DrawMouse (300 - t,    900 - t*2, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
 
-        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
-        DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, t%2);
-        DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 10);
+        DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood  (900, 120, 1,   1,   1,   TX_BROWN, TX_LIGHTGREEN, 0, t%2);
+        DrawSun   (100, 100, 1,   1,   1,   TX_YELLOW, TX_YELLOW, 0, 8, 10);
         DrawDog   (250, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, 0, t%10, 100, 30, t%10);
         DrawCat   (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0 + t%3, 110 + t%2, 0 + t%10);
 
-        txSetColor   (TX_WHITE);
+        txSetColor (TX_WHITE);
         txSelectFont ("Arial Black", 30);
-        txTextOut    (550, 600, "РњС‹С€Рё!!!");
+        txTextOut (550, 600, "Мыши!");
 
         txSleep   (500);
         }
@@ -171,7 +171,7 @@ void Pobeda()
 
         txSetColor (TX_WHITE);
         txSelectFont ("Arial Black", 30);
-        txTextOut (150, 550, "РЎС‚СЂРѕРёРј Р·Р°С‰РёС‚Сѓ!");
+        txTextOut (150, 550, "Строим защиту!");
         txSleep (300);
         }
 
@@ -201,7 +201,7 @@ void Pobeda()
 
     txSetColor (TX_BLACK);
     txSelectFont ("Arial Black", 60);
-    txTextOut (350, 550, "РќРµРєРѕС‚РѕСЂРѕРµ РІСЂРµРјСЏ СЃРїСѓСЃС‚СЏ...");
+    txTextOut (350, 550, "Некоторое время спустя...");
     txSleep (1500);
 
     for (int paws = 1; paws <= 120; paws += 3)
@@ -232,7 +232,7 @@ void Pobeda()
 
     txSetColor (TX_WHITE);
     txSelectFont ("Arial Black", 30);
-    txTextOut (480, 550, "РЈР Рђ!");
+    txTextOut (480, 550, "УРА!");
     txSleep (2000);
 
     txEnd();
@@ -245,14 +245,13 @@ void FinishTitles()
         {
         txClear();
         txSetFillColor (TX_BLACK);
-        txSetColor     (TX_WHITE);
-        txSelectFont    ("Arial Black", 70);
-
-        txTextOut (200, 1000 - t*2, "РњСѓР»СЊС‚С„РёР»СЊРј РїРѕРґРіРѕС‚РѕРІРёР»Р°");
-        txTextOut (290, 1050 - t*2, "Р–Р°РґРѕР±РёРЅР° Р•Р»РµРЅР°");
-        txTextOut (300, 1100 - t*2, "Рі. РњР°РіРЅРёС‚РѕРіРѕСЂСЃРє");
-        txTextOut (320, 1150 - t*2, "РњРђРћРЈ РњР› в„–1");
-        txSleep   (100);
+        txSetColor (TX_WHITE);
+        txSelectFont ("Arial Black", 70);
+        txTextOut (200, 1000 - t*2, "Мультфильм подготовила");
+        txTextOut (290, 1050 - t*2, "Жадобина Елена");
+        txTextOut (300, 1100 - t*2, "г. Магнитогорск");
+        txTextOut (320, 1150 - t*2, "МАОУ МЛ №1");
+        txSleep (100);
         t+= 5;
         }
 

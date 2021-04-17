@@ -4,10 +4,8 @@
 //! @brief      Мультфильм "Нашествие грызунов".
 //!
 //!             Пример создания мультфильма с помощью TXLib.
-//!             КПК по С++ от МФТИ.
 //!
 //!             $Date: 2021-04-14 $
-//!             $Copyright: (C) mordovina174 (Жадобина Елена Владимировна) <mordovina174@gmail.com> $
 //          (C) Жадобина Елена, г.Магнитогорск, 2021
 //}===========================================================================
 
@@ -17,25 +15,28 @@ void DrawBackground (COLORREF skyColor, COLORREF GruntColor);
 
 void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor);
 
-void DrawSun   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF centreColor, COLORREF luchColor,
-                double luch, double eyes, double smile);
+void DrawBird (int x, int y, double sizeX, double sizeY, COLORREF telocolor, double fly);
+
+void DrawSun (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF centreColor, COLORREF luchColor,
+              double luch, double eyes, double smile);
 
 void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF domColor, COLORREF roofColor, COLORREF windowColor);
 
-void DrawWood  (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF stvolColor, COLORREF listColor,
-                double stvol, double sheet);
+void DrawWood (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF stvolColor, COLORREF listColor,
+               double stvol, double sheet);
 
-void DrawCat   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF mordochkaColor,
-                double dlinausov, double usymove, double paws, double lips);
+void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF mordochkaColor,
+              double dlinausov, double usymove, double paws, double lips);
 
-void DrawDog   (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
-                double head, double past, double hvost, double uho, double eyes, double lapy);
+void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
+              double head, double past, double hvost, double uho, double eyes, double lapy);
 
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo);
 
 void StartTitles();
 void Rassvet();
+void VihodGeroev();
 void Nashestvie();
 void Pobeda();
 void FinishTitles();
@@ -48,6 +49,7 @@ int main()
 
     StartTitles();
     Rassvet();
+    VihodGeroev();
     Nashestvie();
     Pobeda();
     FinishTitles();
@@ -82,11 +84,16 @@ void Rassvet()
     {
     txBegin();
 
+    txPlaySound ("peniyaptits.wav");
         for (int t = 1; t <= 130; t += 20)
         {
         DrawBackground (RGB (0, 0 + t*2, 128 + t), RGB (0, 128 + t, 0 + t));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
-        DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
+        DrawBird (100 + t*10, 600,  1,  1, TX_YELLOW, t%30);
+        DrawBird (800 - t*10, 300, -1, -1, TX_RED,    t%30);
+        DrawBird (100 + t*10, 200,  1,  1, TX_YELLOW, t%30);
+        DrawBird (800 - t*10, 100, -1, -1, TX_ORANGE, t%30);
         txSleep (800);
         }
 
@@ -95,33 +102,40 @@ void Rassvet()
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
-        DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, x%2);
-        DrawSun   (  x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, x%10, 8, x%10);
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, x%2);
+        DrawSun (x, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, x%10, 8, x%10);
         txSleep (300);
         x -= 55;
         }
 
     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
     txSleep (1000);
+    txPlaySound (NULL);
+    txEnd();
+    }
+
+void VihodGeroev()
+    {
+    txBegin();
 
     for (int paws = 1; paws <= 50; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
-        DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
-        DrawWood  (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, paws%2);
-        DrawCat   (600 - paws*2, 550 + paws*2, 0.3 + paws*0.01, 0.3 + paws*0.01, 0.3 + paws*0.01, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws*2, paws/10);
-        DrawDog   ( 50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%10, paws%2, paws%10, 100, 30, paws%10);
-        txSleep   (200);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, paws%2);
+        DrawCat (600 - paws*2, 550 + paws*2, 0.3 + paws*0.01, 0.3 + paws*0.01, 0.3 + paws*0.01, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws*2, paws/10);
+        DrawDog (50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%20, paws%2, paws%20, 100, 30, paws%20);
+        txSleep (200);
         }
 
     txSetColor (TX_WHITE);
     txSelectFont ("Arial Black", 30);
     txTextOut (570, 500, "Отличный день!");
     txSleep (2000);
-    txSelectFont ("Arial Black", 30);
     txTextOut (350, 700, "Никто не сможет испортить настроение!");
     txSleep (2000);
+
     txEnd();
     }
 
@@ -296,6 +310,24 @@ void DrawSun (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF c
     txSetColor (TX_BLACK, 3);
     txLine (x - 20*sizeX,  y + 20*sizeY,           x +  5*sizeX,  y + (30 - smile)*sizeY);
     txLine (x +  5*sizeX,  y + (30 - smile)*sizeY, x + 30*sizeX,  y + 20*sizeY);
+    }
+
+void DrawBird (int x, int y, double sizeX, double sizeY, COLORREF teloColor, double fly)
+    {
+    txSetFillColor (teloColor);
+    txSetColor (teloColor, 2);
+
+    POINT Rwing [3] = {{ROUND (x + 10),       ROUND (y)},
+                       {ROUND (x + 20*sizeX), ROUND (y)},
+                       {ROUND (x - 10*sizeX), ROUND (y - (20 - fly)*sizeY)}};
+    txPolygon (Rwing, 3);
+
+    POINT Lwing [3] = {{ROUND (x + 30*sizeX), ROUND (y + 5*sizeY)},
+                       {ROUND (x + 10*sizeX), ROUND (y + 5*sizeY)},
+                       {ROUND (x - 10*sizeX), ROUND (y + (20 + fly)*sizeY)}};
+    txPolygon (Lwing, 3);
+
+    txEllipse (x, y, x + 40*sizeX, y + 10*sizeY);
     }
 
 void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF domColor, COLORREF roofColor, COLORREF WindowColor)

@@ -61,23 +61,22 @@ int main()
 
 void StartTitles()
     {
+    txPlaySound ("opasnost.wav");
     int t = 0;
     while (t <= 50)
         {
         txClear();
         txSetFillColor (RGB(0 + t*10, 128 + t, 0 + t*15));
-        txSetColor (TX_YELLOW);
-
+        txSetColor (TX_RED);
         txSelectFont ("Arial Black", 150);
         txTextOut (-450 + t*10, 300, "НАШЕСТВИЕ");
-
         txSelectFont ("Arial Black", 130);
         txTextOut (1100 - t*15, 500, "ГРЫЗУНОВ");
         txSleep (50);
         t++;
         }
-
     txSleep (2000);
+    txPlaySound (NULL);
     }
 
 void Rassvet()
@@ -85,7 +84,7 @@ void Rassvet()
     txBegin();
 
     txPlaySound ("peniyaptits.wav");
-        for (int t = 1; t <= 130; t += 20)
+    for (int t = 1; t <= 130; t += 20)
         {
         DrawBackground (RGB (0, 0 + t*2, 128 + t), RGB (0, 128 + t, 0 + t));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
@@ -111,6 +110,7 @@ void Rassvet()
     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (255, 255, 128));
     txSleep (1000);
     txPlaySound (NULL);
+
     txEnd();
     }
 
@@ -118,12 +118,14 @@ void VihodGeroev()
     {
     txBegin();
 
+    txPlaySound ("utro.wav");
     for (int paws = 1; paws <= 50; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_BLACK, RGB(255, 255, 128));
         DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
         DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, paws%2);
+
         DrawCat (600 - paws*2, 550 + paws*2, 0.3 + paws*0.01, 0.3 + paws*0.01, 0.3 + paws*0.01, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws*2, paws/10);
         DrawDog (50 + paws*5, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + paws%20, paws%2, paws%20, 100, 30, paws%20);
         txSleep (200);
@@ -134,7 +136,8 @@ void VihodGeroev()
     txTextOut (570, 500, "Отличный день!");
     txSleep (2000);
     txTextOut (350, 700, "Никто не сможет испортить настроение!");
-    txSleep (2000);
+    txSleep (3000);
+    txPlaySound (NULL);
 
     txEnd();
     }
@@ -143,9 +146,12 @@ void Nashestvie()
     {
     txBegin();
 
+    txPlaySound ("opasnost.wav");
     for (int t = 20; t <= 500; t += 25)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, t%2);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 10);
 
         DrawMouse (100 + t,    450 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
         DrawMouse (500 - t*2,  400 + t,   0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
@@ -153,18 +159,18 @@ void Nashestvie()
         DrawMouse (100 + t*2,  430 + t,   0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, t%10, t%10, t%10);
         DrawMouse (300 - t,    900 - t*2, 0.7, 0.7, 0.7, TX_ORANGE, TX_BLACK, t%10, t%10, t%10);
 
-        DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
-        DrawWood  (900, 120, 1,   1,   1,   TX_BROWN, TX_LIGHTGREEN, 0, t%2);
-        DrawSun   (100, 100, 1,   1,   1,   TX_YELLOW, TX_YELLOW, 0, 8, 10);
-        DrawDog   (250, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, 0, t%10, 100, 30, t%10);
-        DrawCat   (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0 + t%3, 110 + t%2, 0 + t%10);
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawDog (250 - t, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, 0, t%15, 100, 30, t%15);
+        DrawCat (460 + t, 750 - t/2, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0 + t%3, 110 + t%2, 0 + t%10);
 
         txSetColor (TX_WHITE);
         txSelectFont ("Arial Black", 30);
         txTextOut (550, 600, "Мыши!");
 
-        txSleep   (500);
+        txSleep (300);
         }
+
+    txPlaySound (NULL);
 
     txEnd();
     }
@@ -173,15 +179,16 @@ void Pobeda()
     {
     txBegin();
 
+    txPlaySound ("stroit.wav");
     for (int t = 10; t <= 100; t += 15)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, t%2);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 20);
 
-        DrawHouse (650, 340, 1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
-        DrawWood  (900, 120, 1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, t%2);
-        DrawSun   (100, 100, 1,   1,   1,   TX_YELLOW,    TX_YELLOW, 0, 8, 20);
-        DrawDog   (250, 700, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 260 + t%10, 0, t%10, 100, 30, 0);
-        DrawCat   (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, 0, 0);
+        DrawDog (250, 700, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260 + t%10, 0, t%10, 100, 30, 0);
+        DrawCat (460, 750, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, 0, 0);
 
         txSetColor (TX_WHITE);
         txSelectFont ("Arial Black", 30);
@@ -192,32 +199,35 @@ void Pobeda()
     for (int y = 10; y <= 300; y += 15)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
+        DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
+        DrawWood (900, 120, 1, 1, 1, TX_BROWN, TX_LIGHTGREEN, 0, 0);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 20);
 
-        DrawHouse (650,     340,     1,   1,   1,   TX_ORANGE,    TX_DARKGRAY, RGB(255, 255, 128));
-        DrawWood  (900,     120,     1,   1,   1,   TX_BROWN,     TX_LIGHTGREEN, 0, 0);
-        DrawSun   (100,     100,     1,   1,   1,   TX_YELLOW,    TX_YELLOW, 0, 8, 20);
-        DrawDog   (250 + y, 700 - y, 0.8, 0.8, 0.8, TX_BROWN,     TX_BLACK, 260, y%10, y%10, 100, 30, 0);
-        DrawCat   (460 + y, 750 - y, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, y%10, y%10, y%10, 0);
-        txSleep   (150);
+        DrawDog (250 + y, 700 - y, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 260, y%10, y%10, 100, 30, 0);
+        DrawCat (460 + y, 750 - y, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, y%10, y%10, y%10, 0);
+        txSleep (150);
         }
 
-    txSleep (1000);
+    txSleep (2000);
 
     for (int y = 10; y <= 300; y += 15)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
         DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB(255, 255, 128));
-        DrawSun   (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 20);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 0, 8, 20);
+
         DrawFence (480 - y, 450, 1, 1, TX_BROWN);
         DrawFence (100 + y, 450, 1, 1, TX_BROWN);
-        txSleep   (200);
+        txSleep (200);
         }
 
     txSetColor (TX_BLACK);
     txSelectFont ("Arial Black", 60);
     txTextOut (350, 550, "Некоторое время спустя...");
     txSleep (1500);
+    txPlaySound (NULL);
 
+    txPlaySound ("letnee.wav");
     for (int paws = 1; paws <= 120; paws += 3)
         {
         DrawBackground (RGB (0, 255, 255), RGB (0, 255, 128));
@@ -234,12 +244,18 @@ void Pobeda()
         DrawFence ( 940, 450, 1, 1, TX_BROWN);
         DrawFence (1020, 450, 1, 1, TX_BROWN);
 
-        DrawSun  (100,        100,        1,   1,   1,   TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
-        DrawCat  (600 - paws, 550 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
-        DrawDog  (750 + paws, 550 + paws, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 0, paws%2, paws%10, 0, 0, paws%10);
-        DrawWood (100,        300,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
-        DrawWood (150,        500,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
-        DrawWood (250,        400,        1,   1,   1,   TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+        DrawSun (100, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, paws%5, 8, paws%10);
+        DrawCat (600 - paws, 550 + paws, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, paws, paws/15);
+        DrawDog (750 + paws, 550 + paws, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 0, paws%2, paws%10, 0, 0, paws%10);
+
+        DrawWood (100, 300, 1, 1, 1, TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+        DrawWood (150, 500, 1, 1, 1, TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+        DrawWood (250, 400, 1, 1, 1, TX_BROWN, RGB(0, 150, 0), 0, paws%2);
+
+        DrawBird (100 + paws*10, 600,  1,  1, TX_YELLOW, paws%30);
+        DrawBird (800 - paws*10, 300, -1, -1, TX_RED,    paws%30);
+        DrawBird (100 + paws*10, 200,  1,  1, TX_YELLOW, paws%30);
+        DrawBird (800 - paws*10, 100, -1, -1, TX_ORANGE, paws%30);
 
         txSleep (150);
         }
@@ -248,12 +264,14 @@ void Pobeda()
     txSelectFont ("Arial Black", 30);
     txTextOut (480, 550, "УРА!");
     txSleep (2000);
+    txPlaySound (NULL);
 
     txEnd();
     }
 
 void FinishTitles()
     {
+    txPlaySound ("veselaya.wav");
     int t = 0;
     while (t <= 400)
         {
@@ -264,12 +282,12 @@ void FinishTitles()
         txTextOut (200, 1000 - t*2, "Мультфильм подготовила");
         txTextOut (290, 1050 - t*2, "Жадобина Елена");
         txTextOut (300, 1100 - t*2, "г. Магнитогорск");
-        txTextOut (320, 1150 - t*2, "МАОУ МЛ №1");
         txSleep (100);
         t+= 5;
         }
 
-    txSleep (2000);
+    txSleep (3000);
+    txPlaySound (NULL);
     txClear();
     }
 
@@ -434,11 +452,9 @@ void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     txLine (x + 35*sizeX, y - 150*sizeY, x + (80 + dlinausov)*sizeX, y - (160 + usymove)*sizeY);
 
     txSetFillColor (TX_PINK);
-
     txEllipse (x + (30 + lips)*sizeX, y - (130 + lips)*sizeY, x + (15 - lips)*sizeX, y - (125 - lips)*sizeY);
 
     txSetFillColor (teloColor);
-
     txEllipse (x -  70*sizeX, y + 10*sizeY, x - 10*sizeX, y - 60*sizeY);
     txEllipse (x + 120*sizeX, y + 10*sizeY, x + 60*sizeX, y - 60*sizeY);
 
@@ -519,7 +535,6 @@ void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
     txCircle (x,            y + 30*sizeY, 10*sizeR);
 
     txSetFillColor (eyasColor);
-
     txCircle (x - 25*sizeX, y + 20*sizeY, 3*sizeR);
     txCircle (x - 15*sizeX, y + 27*sizeY, 3*sizeR);
     }

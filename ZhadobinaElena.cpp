@@ -39,7 +39,7 @@ int main()
 
 void StartTitles()
     {
-    txPlaySound ("opasnost.wav");
+    txPlaySound ("Sounds/opasnost.wav");
 
     int t = 0;
     while (t <= 50)
@@ -64,7 +64,7 @@ void Rassvet()
     {
     txBegin();
 
-    txPlaySound ("peniyaptits.wav");
+    txPlaySound ("Sounds/peniyaptits.wav");
 
     for (int t = 1; t <= 130; t += 20)
         {
@@ -103,7 +103,7 @@ void VihodGeroev()
     {
     txBegin();
 
-    txPlaySound ("utro.wav");
+    txPlaySound ("Sounds/utro.wav");
 
     for (int paws = 1; paws <= 50; paws += 3)
         {
@@ -134,7 +134,7 @@ void Nashestvie()
     {
     txBegin();
 
-    txPlaySound ("opasnost.wav");
+    txPlaySound ("Sounds/opasnost.wav");
 
     for (int t = 20; t <= 500; t += 25)
         {
@@ -168,7 +168,7 @@ void Pobeda()
     {
     txBegin();
 
-    txPlaySound ("stroit.wav");
+    txPlaySound ("Sounds/stroit.wav");
 
     for (int t = 10; t <= 100; t += 15)
         {
@@ -221,7 +221,7 @@ void Pobeda()
     txSleep (1500);
     txPlaySound (NULL);
 
-    txPlaySound ("letnee.wav");
+    txPlaySound ("Sounds/letnee.wav");
 
     for (int paws = 1; paws <= 120; paws += 3)
         {
@@ -267,7 +267,7 @@ void Pobeda()
 
 void FinishTitles()
     {
-    txPlaySound ("veselaya.wav");
+    txPlaySound ("Sounds/veselaya.wav");
 
     int t = 0;
     while (t <= 400)

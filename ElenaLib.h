@@ -1,9 +1,24 @@
 //{===========================================================================
-//! @file       ElenaLib.h
+//! @brief     ElenaLib.h
 //!
-//!             Библиотека объектов
+//! @author    Zhadobina Elena, Magnitogorsk 2021
 //!
-//          (C) Жадобина Елена, г.Магнитогорск, 2021
+//! @mainpage
+//!            Функции библиотеки:
+//!
+//!           - @ref DrawBackground()
+//!           - @ref DrawFence()
+//!           - @ref DrawBird()
+//!           - @ref DrawSun()
+//!           - @ref DrawHouse()
+//!           - @ref DrawWood()
+//!           - @ref DrawCat()
+//!           - @ref DrawDog()
+//!           - @ref DrawMouse()
+//!
+//! @note      Библиотека объектов для рисования мультфильма "Нашествие грызунов"
+//!
+//! @image html basic.png width=500 height=400
 //}===========================================================================
 
 #include "TXLib.h"
@@ -31,6 +46,21 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo);
 
+//{-----------------------------------------------------------------------------
+//! Рисует фон!
+//! Небо и земля!
+//!
+//! @param  SkyColor    Цвет неба
+//! @param  GruntColor  Цвет земли
+//!
+//! @note   <i>Меняя цвета, можно сделать, как сушу, так и море!</i>
+//!
+//! @par    Пример использования:
+//! @code
+//!         DrawBackground (RGB (0, 0, 128), RGB (0, 128, 0));
+//! @endcode
+//}-----------------------------------------------------------------------------
+
 void DrawBackground (COLORREF SkyColor, COLORREF GruntColor)
     {
     txSetFillColor (SkyColor);
@@ -39,6 +69,28 @@ void DrawBackground (COLORREF SkyColor, COLORREF GruntColor)
     txSetFillColor (GruntColor);
     txRectangle (0, 400, 1000, 1000);
     }
+
+//{-----------------------------------------------------------------------------
+//! Рисует солнышко!
+//!
+//! @param x            x-координата центра солнца!
+//! @param y            y-координата центра солнца!
+//! @param sizeR        Радиус окружности солнца и его лучей!
+//! @param sizeX        Сдвиг по оси X лучей и глаз в зависимости от размера солнца!
+//! @param sizeY        Сдвиг по оси Y лучей и глаз в зависимости от размера солнца!
+//! @param centreColor  Цвет солнца!
+//! @param luchColor    Цвет лучиков солнца!
+//! @param luch         Отвечает за движение лучей!
+//! @param eyes         Отвечает за перемещение зрачков глаз!
+//! @param smile        Отвечает за улыбку!
+//!
+//! @note               <i>Солнышко любит улыбаться! Но если вы нарисуете тучки, то солнышко может грустить!</i>
+//!
+//! @par                Пример использования:
+//! @code
+//!                     DrawSun (200, 100, 1, 1, 1, TX_YELLOW, TX_YELLOW, 1, 8, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------
 
 void DrawSun (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF centreColor, COLORREF luchColor,
               double luch, double eyes, double smile)
@@ -69,6 +121,24 @@ void DrawSun (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF c
     txLine (x +  5*sizeX,  y + (30 - smile)*sizeY, x + 30*sizeX,  y + 20*sizeY);
     }
 
+//{-----------------------------------------------------------------------------
+//! Рисует птичку!
+//!
+//! @param x          x-координата тела птички!
+//! @param y          y-координата тела птички!
+//! @param sizeX      Размер птички по оси X!
+//! @param sizeY      Размер птички по оси Y!
+//! @param teloColor  Цвет птички!
+//! @param fly        Отвечает за взмах крыльев!
+//!
+//! @note             <i>Птичка очень любит летать! Сидеть не умеет!</i>
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawBird (400, 600, 1, 1, TX_YELLOW, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------
+
 void DrawBird (int x, int y, double sizeX, double sizeY, COLORREF teloColor, double fly)
     {
     txSetFillColor (teloColor);
@@ -86,6 +156,26 @@ void DrawBird (int x, int y, double sizeX, double sizeY, COLORREF teloColor, dou
 
     txEllipse (x, y, x + 40*sizeX, y + 10*sizeY);
     }
+
+//{-----------------------------------------------------------------------------
+//! Рисует домик!
+//!
+//! @param x            x-координата дома!
+//! @param y            y-координата дома!
+//! @param sizeR        Размер ручки двери!
+//! @param sizeX        Размер дома по оси X!
+//! @param sizeY        Размер дома по оси Y!
+//! @param domColor     Цвет дома!
+//! @param roofColor    Цвет крыши!
+//! @param WindowColor  Цвет окна!
+//!
+//! @note               <i>Чтобы в окошке загорелся свет, нужно просто поменять цвет окна!</i>
+//!
+//! @par                Пример использования:
+//! @code
+//!                     DrawHouse (650, 340, 1, 1, 1, TX_ORANGE, TX_DARKGRAY, RGB (0, 0, 255));
+//! @endcode
+//}-----------------------------------------------------------------------------
 
 void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF domColor, COLORREF roofColor, COLORREF WindowColor)
     {
@@ -113,6 +203,23 @@ void DrawHouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF
     txCircle (x - 50*sizeX, y + 60*sizeY, 5*sizeR);
     }
 
+//{-----------------------------------------------------------------------------
+//! Рисует забор!
+//!
+//! @param x           x-координата забора!
+//! @param y           y-координата забора!
+//! @param sizeX       Размер забора по оси X!
+//! @param sizeY       Размер забора по оси Y!
+//! @param zaborColor  Цвет забора!
+//!
+//! @note              <i>Рисует только две секции забора!</i>
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawFence (480, 450, 1, 1, TX_BROWN);
+//! @endcode
+//}-----------------------------------------------------------------------------
+
 void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor)
     {
     txSetColor (TX_BLACK, 3);
@@ -131,6 +238,27 @@ void DrawFence (int x, int y, double sizeX, double sizeY, COLORREF zaborColor)
                       {ROUND (x - 60*sizeX), ROUND (y - 120*sizeY)}};
     txPolygon (Verh, 3);
     }
+
+//{-----------------------------------------------------------------------------
+//! Рисует дерево!
+//!
+//! @param x           x-координата дерева!
+//! @param y           y-координата дерева!
+//! @param sizeR       Радиус листьев дерева!
+//! @param sizeX       Размер дерева по оси X!
+//! @param sizeY       Размер дерева по оси Y!
+//! @param stvolColor  Цвет ствола дерева!
+//! @param listColor   Цвет листьев дерева!
+//! @param stvol       Рост ствола дерева!
+//! @param sheet       Движение листьев!
+//!
+//! @note              <i>При желении на дерево можно добавить плоды!</i>
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawWood (100, 300, 1, 1, 1, TX_BROWN, RGB(0, 150, 0), 0, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------
 
 void DrawWood (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF stvolColor, COLORREF listColor,
                double stvol, double sheet)
@@ -152,6 +280,29 @@ void DrawWood (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF 
     txCircle (x + (70 - sheet*4)*sizeX, y + (100 + sheet)*sizeY, 30*sizeR);
     txCircle (x - (30 + sheet*4)*sizeX, y + sheet,               30*sizeR);
     }
+
+//{-----------------------------------------------------------------------------
+//! Рисует милого котика!
+//!
+//! @param x               x-координата котика!
+//! @param y               y-координата котика!
+//! @param sizeR           Радиус лапок, глаз, мордочки!
+//! @param sizeX           Размер котика по оси X!
+//! @param sizeY           Размер котика по оси Y!
+//! @param teloColor       Цвет тела котика!
+//! @param mordochkaColor  Цвет мордочки котика!
+//! @param dlinausov       Длина усов!
+//! @param usymove         Движение усов!
+//! @param paws            Движение передних лап!
+//! @param lips            Открывает рот!
+//!
+//! @note                  <i>Котик очень любит обниматься!</i>
+//!
+//! @par                   Пример использования:
+//! @code
+//!                        DrawCat (600, 550, 0.8, 0.8, 0.8, TX_LIGHTGRAY, TX_BLACK, 0, 0, 1, 2);
+//! @endcode
+//}-----------------------------------------------------------------------------
 
 void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF mordochkaColor,
               double dlinausov, double usymove, double paws, double lips)
@@ -204,6 +355,31 @@ void DrawCat (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     txCircle (x + (45 + paws)*sizeX, y - paws, 15*sizeR);
     }
 
+//{-----------------------------------------------------------------------------
+//! Рисует собачку!
+//!
+//! @param x              x-координата собачки!
+//! @param y              y-координата собачки!
+//! @param sizeR          Радиус головы, глаз, носика!
+//! @param sizeX          Размер собачки по оси X!
+//! @param sizeY          Размер собачки по оси Y!
+//! @param teloColor      Цвет тела собачки!
+//! @param elementyColor  Цвет лап, ушей, носа, хвоста собачки!
+//! @param head           Поворот головы!
+//! @param past           Открывание рта!
+//! @param hvost          Движение хвоста!
+//! @param uho            Движение уха!
+//! @param eyes           Движение зрачка глаза!
+//! @param lapy           Движение лап!
+//!
+//! @note                 <i>Собачка очень дружелюбная, когда машет хвостиком!</i>
+//!
+//! @par                  Пример использования:
+//! @code
+//!                       DrawDog (600, 400, 0.8, 0.8, 0.8, TX_BROWN, TX_BLACK, 1, 1, 1, 1, 1, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------
+
 void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor,
               double head, double past, double hvost, double uho, double eyes, double lapy)
     {
@@ -251,6 +427,28 @@ void DrawDog (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF t
     txCircle (x - (175 - head)*sizeX, y - 95*sizeY, 20*sizeR);
     txCircle (x - ( 80 - eyes)*sizeX, y - 90*sizeY, 10*sizeR);
     }
+
+//{-----------------------------------------------------------------------------
+//! Рисует мышку!
+//!
+//! @param x          x-координата мышки!
+//! @param y          y-координата мышки!
+//! @param sizeR      Радиус ушей, глаз мышки!
+//! @param sizeX      Размер мышки по оси X!
+//! @param sizeY      Размер мышки по оси Y!
+//! @param teloColor  Цвет тела мышки!
+//! @param eyasColor  Цвет глаз мышки!
+//! @param head       Движение головы!
+//! @param hvost      Движение хвоста!
+//! @param telo       Движение тела!
+//!
+//! @note             <i>Мышка очень шустрая!</i>
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawMouse (100, 450, 0.7, 0.7, 0.7, TX_YELLOW, TX_BLACK, 1, 1, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------
 
 void DrawMouse (int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor,
                 double head, double hvost, double telo)

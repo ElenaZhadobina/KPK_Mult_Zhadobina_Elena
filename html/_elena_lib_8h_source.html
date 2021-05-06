@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ElenaLib.h: Исходный файл ElenaLib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ElenaLib.h
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ElenaLib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_elena_lib_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//{===========================================================================</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span><span class="comment">//}===========================================================================</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;TXLib.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a7a192061b5403056e8ef476270ff69ec">DrawBackground</a> (COLORREF skyColor, COLORREF GruntColor);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#afba5c4242471945ae9c8d80a18643061">DrawFence</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF zaborColor);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a981997e01570337a4863ec99c4f69cfa">DrawBird</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF telocolor, <span class="keywordtype">double</span> fly);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a5fe99bc2cf71bde7006f2f08e23de02b">DrawSun</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF centreColor, COLORREF luchColor,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              <span class="keywordtype">double</span> luch, <span class="keywordtype">double</span> eyes, <span class="keywordtype">double</span> smile);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#af56c89adde009e3402306ddf0f9fac51">DrawHouse</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF domColor, COLORREF roofColor, COLORREF windowColor);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a7eb0d17a61c68ca4185141d8346470d4">DrawWood</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF stvolColor, COLORREF listColor,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;               <span class="keywordtype">double</span> stvol, <span class="keywordtype">double</span> sheet);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#ab08cf5f7bdcd1cbcd6451214af9325db">DrawCat</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF mordochkaColor,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;              <span class="keywordtype">double</span> dlinausov, <span class="keywordtype">double</span> usymove, <span class="keywordtype">double</span> paws, <span class="keywordtype">double</span> lips);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a2046733ab68319fcce48c0a3114c00fe">DrawDog</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF elementyColor,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;              <span class="keywordtype">double</span> head, <span class="keywordtype">double</span> past, <span class="keywordtype">double</span> hvost, <span class="keywordtype">double</span> uho, <span class="keywordtype">double</span> eyes, <span class="keywordtype">double</span> lapy);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#ae20e1a6c0c33e69faa263157078fd6ff">DrawMouse</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF eyasColor,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">double</span> head, <span class="keywordtype">double</span> hvost, <span class="keywordtype">double</span> telo);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#a7a192061b5403056e8ef476270ff69ec">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a7a192061b5403056e8ef476270ff69ec">DrawBackground</a> (COLORREF SkyColor, COLORREF GruntColor)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    txSetFillColor (SkyColor);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    txRectangle (0, 0, 1000, 400);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    txSetFillColor (GruntColor);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    txRectangle (0, 400, 1000, 1000);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#a5fe99bc2cf71bde7006f2f08e23de02b">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a5fe99bc2cf71bde7006f2f08e23de02b">DrawSun</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF centreColor, COLORREF luchColor,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;              <span class="keywordtype">double</span> luch, <span class="keywordtype">double</span> eyes, <span class="keywordtype">double</span> smile)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    txSetFillColor (centreColor);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    txCircle (x, y, 50*sizeR);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    txSetFillColor (luchColor);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    txCircle (x - (70 + luch)*sizeX, y,                     10*sizeR);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    txCircle (x + (70 + luch)*sizeX, y,                     10*sizeR);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    txCircle (x,                     y + (70 + luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    txCircle (x,                     y - (70 + luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    txCircle (x - (55 - luch)*sizeX, y + (50 - luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    txCircle (x - (55 - luch)*sizeX, y - (55 - luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    txCircle (x + (50 - luch)*sizeX, y - (55 - luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    txCircle (x + (50 - luch)*sizeX, y + (50 - luch)*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    txSetFillColor (TX_WHITE);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    txCircle (x - 20*sizeX, y - 10*sizeY, 15*sizeR);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    txCircle (x + 20*sizeX, y - 10*sizeY, 15*sizeR);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    txSetFillColor (TX_BLACK);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    txCircle (x - (20 - eyes)*sizeX, y - 10*sizeY, 7*sizeR);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    txCircle (x + (20 + eyes)*sizeX, y - 10*sizeY, 7*sizeR);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    txLine (x - 20*sizeX,  y + 20*sizeY,           x +  5*sizeX,  y + (30 - smile)*sizeY);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    txLine (x +  5*sizeX,  y + (30 - smile)*sizeY, x + 30*sizeX,  y + 20*sizeY);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#a981997e01570337a4863ec99c4f69cfa">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a981997e01570337a4863ec99c4f69cfa">DrawBird</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, <span class="keywordtype">double</span> fly)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    txSetColor (teloColor, 2);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    POINT Rwing [3] = {{ROUND (x + 10),       ROUND (y)},</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                       {ROUND (x + 20*sizeX), ROUND (y)},</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                       {ROUND (x - 10*sizeX), ROUND (y - (20 - fly)*sizeY)}};</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    txPolygon (Rwing, 3);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    POINT Lwing [3] = {{ROUND (x + 30*sizeX), ROUND (y + 5*sizeY)},</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                       {ROUND (x + 10*sizeX), ROUND (y + 5*sizeY)},</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                       {ROUND (x - 10*sizeX), ROUND (y + (20 + fly)*sizeY)}};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    txPolygon (Lwing, 3);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    txEllipse (x, y, x + 40*sizeX, y + 10*sizeY);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#af56c89adde009e3402306ddf0f9fac51">  180</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#af56c89adde009e3402306ddf0f9fac51">DrawHouse</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF domColor, COLORREF roofColor, COLORREF WindowColor)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    txSetFillColor (domColor);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    txRectangle (x - 150*sizeX, y + 110*sizeY, x + 150*sizeX, y - 90*sizeY);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    txSetFillColor (WindowColor);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    txRectangle (x + 20*sizeX, y - 40*sizeY, x + 100*sizeX, y + 40*sizeY);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    txLine (x +  60*sizeX, y,             x + 100*sizeX, y);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    txLine (x +  60*sizeX, y -  40*sizeY, x +  60*sizeX, y +  40*sizeY);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    txLine (x - 160*sizeX, y -  90*sizeY, x + 160*sizeX, y -  90*sizeY);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    txLine (x + 160*sizeX, y -  90*sizeY, x,             y - 240*sizeY);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    txLine (x,             y - 240*sizeY, x - 160*sizeX, y -  90*sizeY);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    txSetFillColor (TX_GRAY);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    txFloodFill (x, y - 170*sizeY);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    txSetFillColor (roofColor);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    txRectangle (x - 110*sizeX, y + 110*sizeY, x - 30*sizeX, y - 10*sizeY);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    txSetFillColor (TX_BLACK);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    txCircle (x - 50*sizeX, y + 60*sizeY, 5*sizeR);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#afba5c4242471945ae9c8d80a18643061">  223</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#afba5c4242471945ae9c8d80a18643061">DrawFence</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF zaborColor)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    txSetFillColor (zaborColor);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    txRectangle (x + 20*sizeX, y, x - 20*sizeX, y - 120*sizeY);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    txRectangle (x - 20*sizeX, y, x - 60*sizeX, y - 120*sizeY);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    POINT Verhushka [3] = {{ROUND (x + 20*sizeX), ROUND (y - 120*sizeY)},</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                           {ROUND (x),            ROUND (y - 150*sizeY)},</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                           {ROUND (x - 20*sizeX), ROUND (y - 120*sizeY)}};</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    txPolygon (Verhushka, 3);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    POINT Verh [3] = {{ROUND (x - 20*sizeX), ROUND (y - 120*sizeY)},</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                      {ROUND (x - 40*sizeX), ROUND (y - 150*sizeY)},</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                      {ROUND (x - 60*sizeX), ROUND (y - 120*sizeY)}};</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    txPolygon (Verh, 3);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#a7eb0d17a61c68ca4185141d8346470d4">  263</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a7eb0d17a61c68ca4185141d8346470d4">DrawWood</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF stvolColor, COLORREF listColor,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;               <span class="keywordtype">double</span> stvol, <span class="keywordtype">double</span> sheet)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    txSetFillColor (stvolColor);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    txRectangle (x, y, x + (40 + stvol)*sizeX, y + 300*sizeY);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    txSetColor (TX_GREEN, 3);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    txSetFillColor (listColor);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    txCircle (x + (60 - sheet*4)*sizeX, y + sheet,               30*sizeR);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    txCircle (x - (30 + sheet*4)*sizeX, y + (100+ sheet)*sizeY,  30*sizeR);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    txCircle (x + (20 - sheet)*sizeX,   y + 100*sizeY,           50*sizeR);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    txCircle (x - (30 + sheet)*sizeX,   y + 50*sizeY,            50*sizeR);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    txCircle (x + (50 - sheet)*sizeX,   y + 50*sizeY,            50*sizeR);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    txCircle (x + (20 - sheet)*sizeX,   y,                       50*sizeR);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    txCircle (x + (70 - sheet*4)*sizeX, y + (100 + sheet)*sizeY, 30*sizeR);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    txCircle (x - (30 + sheet*4)*sizeX, y + sheet,               30*sizeR);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#ab08cf5f7bdcd1cbcd6451214af9325db">  307</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#ab08cf5f7bdcd1cbcd6451214af9325db">DrawCat</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF mordochkaColor,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;              <span class="keywordtype">double</span> dlinausov, <span class="keywordtype">double</span> usymove, <span class="keywordtype">double</span> paws, <span class="keywordtype">double</span> lips)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    POINT Telo [3] = {{ROUND (x -  50*sizeX), ROUND (y +  10*sizeY)},</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                      {ROUND (x + 100*sizeX), ROUND (y +  10*sizeY)},</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                      {ROUND (x +  25*sizeX), ROUND (y - 190*sizeY)}};</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    txPolygon (Telo, 3);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    txCircle (x + 25*sizeX, y - 160*sizeY, 50*sizeR);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    txCircle (x + 25*sizeX, y - 160*sizeY, 50*sizeR);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    POINT LeftUho [3] = {{ROUND (x - 20*sizeX), ROUND (y - 180*sizeY)},</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                         {ROUND (x - 20*sizeX), ROUND (y - 240*sizeY)},</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                         {ROUND (x + 10*sizeX), ROUND (y - 210*sizeY)}};</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    txPolygon (LeftUho, 3);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    POINT RightUho [3] = {{ROUND (x + 70*sizeX), ROUND (y - 180*sizeY)},</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                          {ROUND (x + 70*sizeX), ROUND (y - 240*sizeY)},</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                          {ROUND (x + 40*sizeX), ROUND (y - 210*sizeY)}};</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    txPolygon (RightUho, 3);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    txSetFillColor (mordochkaColor);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    txCircle (x,            y - 170*sizeY, 5*sizeR);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    txCircle (x + 40*sizeX, y - 170*sizeY, 5*sizeR);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    txCircle (x + 20*sizeX, y - 150*sizeY, 5*sizeR);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    txLine (x +  5*sizeX, y - 150*sizeY, x - (40 + dlinausov)*sizeX, y - (150 + usymove)*sizeY);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    txLine (x +  5*sizeX, y - 150*sizeY, x - (40 + dlinausov)*sizeX, y - (160 + usymove)*sizeY);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    txLine (x +  5*sizeX, y - 150*sizeY, x - (40 + dlinausov)*sizeX, y - (140 + usymove)*sizeY);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    txLine (x + 35*sizeX, y - 150*sizeY, x + (80 + dlinausov)*sizeX, y - (150 + usymove)*sizeY);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    txLine (x + 35*sizeX, y - 150*sizeY, x + (80 + dlinausov)*sizeX, y - (140 + usymove)*sizeY);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    txLine (x + 35*sizeX, y - 150*sizeY, x + (80 + dlinausov)*sizeX, y - (160 + usymove)*sizeY);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    txSetFillColor (TX_PINK);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    txEllipse (x + (30 + lips)*sizeX, y - (130 + lips)*sizeY, x + (15 - lips)*sizeX, y - (125 - lips)*sizeY);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    txEllipse (x -  70*sizeX, y + 10*sizeY, x - 10*sizeX, y - 60*sizeY);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    txEllipse (x + 120*sizeX, y + 10*sizeY, x + 60*sizeX, y - 60*sizeY);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    txLine (x - 15*sizeX,          y - 80*sizeY,          x + (10 - paws)*sizeX, y - (15 + paws)*sizeY);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    txLine (x + (40 + paws)*sizeX, y - (15 + paws)*sizeY, x + 65*sizeX,          y - 80*sizeY);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    txCircle (x + ( 5 - paws)*sizeX, y - paws, 15*sizeR);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    txCircle (x + (45 + paws)*sizeX, y - paws, 15*sizeR);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#a2046733ab68319fcce48c0a3114c00fe">  383</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#a2046733ab68319fcce48c0a3114c00fe">DrawDog</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF elementyColor,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;              <span class="keywordtype">double</span> head, <span class="keywordtype">double</span> past, <span class="keywordtype">double</span> hvost, <span class="keywordtype">double</span> uho, <span class="keywordtype">double</span> eyes, <span class="keywordtype">double</span> lapy)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    txRectangle (x - 200*sizeX,          y + 100*sizeY, x,            y);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    txRectangle (x - (180 - head)*sizeX, y - 100*sizeY, x - 50*sizeX, y - 40*sizeY);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    txSetFillColor (elementyColor);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    POINT LeftLapa [3] = {{ROUND (x - 180*sizeX), ROUND (y + (120 + lapy)*sizeY)},</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                          {ROUND (x - 130*sizeX), ROUND (y + (120 + lapy)*sizeY)},</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                          {ROUND (x - 155*sizeX), ROUND (y + ( 80 + lapy)*sizeY)}};</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    txPolygon (LeftLapa, 3);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    POINT RightLapa [3] = {{ROUND (x - 70*sizeX), ROUND (y + (120 + lapy)*sizeY)},</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                           {ROUND (x - 20*sizeX), ROUND (y + (120 + lapy)*sizeY)},</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                           {ROUND (x - 45*sizeX), ROUND (y + ( 80 + lapy)*sizeY)}};</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    txPolygon (RightLapa, 3);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    POINT Hvost [4] = {{ROUND (x - 200*sizeX),             ROUND (y)},</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                       {ROUND (x - (220 + hvost)*sizeX),   ROUND (y + (40 - hvost)*sizeY)},</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                       {ROUND (x - (250 + hvost)*sizeX),   ROUND (y + (50 - hvost*2)*sizeY)},</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                       {ROUND (x - (240 - hvost/2)*sizeX), ROUND (y + (10 - hvost)*sizeY)}};</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    txPolygon (Hvost, 4);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    txSetColor (TX_BLACK, 6);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    txLine (x - 50*sizeX, y - 50*sizeY, x - (180 - head)*sizeX, y - (20 + past)*sizeY);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    txSetColor (TX_BLACK, 3);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    txCircle (x - 50*sizeX, y - 70*sizeY, 70*sizeR);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    txSetFillColor (elementyColor);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    POINT Uho [3] = {{ROUND (x - (60 + uho/4)*sizeX), ROUND (y - 120*sizeY)},</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                     {ROUND (x - (20 + uho)*sizeX),   ROUND (y - 120*sizeY)},</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                     {ROUND (x - (80 + uho)*sizeX),   ROUND (y - 160*sizeY)}};</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    txPolygon (Uho, 3);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    txSetFillColor (TX_WHITE);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    txCircle (x - (70 - eyes)*sizeX, y - 95*sizeY, 20*sizeR);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    txSetFillColor (elementyColor);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    txCircle (x - (175 - head)*sizeX, y - 95*sizeY, 20*sizeR);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    txCircle (x - ( 80 - eyes)*sizeX, y - 90*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno"><a class="line" href="_elena_lib_8h.html#ae20e1a6c0c33e69faa263157078fd6ff">  453</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_elena_lib_8h.html#ae20e1a6c0c33e69faa263157078fd6ff">DrawMouse</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> sizeR, <span class="keywordtype">double</span> sizeX, <span class="keywordtype">double</span> sizeY, COLORREF teloColor, COLORREF eyasColor,</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                <span class="keywordtype">double</span> head, <span class="keywordtype">double</span> hvost, <span class="keywordtype">double</span> telo)</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    {</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    txSetColor (teloColor, 4);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    txLine (x + 30*sizeX, y + 60*sizeY, x + 40*sizeX, y + 90*sizeY);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    txLine (x + 40*sizeX, y + 90*sizeY, x + 30*sizeX, y + (110-hvost)*sizeY);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    txSetColor (TX_BLACK, 2);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    txSetFillColor (teloColor);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    txPie (x - 40*sizeX, y + 40*sizeY, x + 40*sizeX, y + 110*sizeY, telo, 180 + telo);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    POINT Mordochka [3] = {{ROUND (x),            ROUND (y + (30 + head)*sizeY)},</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                           {ROUND (x - 40*sizeX), ROUND (y + (55 - head)*sizeY)},</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                           {ROUND (x - 30*sizeX), ROUND (y + ( 5 + head)*sizeY)}};</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    txPolygon (Mordochka, 3);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    txCircle (x - 30*sizeX, y +  5*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    txCircle (x,            y + 30*sizeY, 10*sizeR);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    txSetFillColor (eyasColor);</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    txCircle (x - 25*sizeX, y + 20*sizeY, 3*sizeR);</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    txCircle (x - 15*sizeX, y + 27*sizeY, 3*sizeR);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    }</div>
+<div class="ttc" id="a_elena_lib_8h_html_a2046733ab68319fcce48c0a3114c00fe"><div class="ttname"><a href="_elena_lib_8h.html#a2046733ab68319fcce48c0a3114c00fe">DrawDog</a></div><div class="ttdeci">void DrawDog(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF elementyColor, double head, double past, double hvost, double uho, double eyes, double lapy)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00383">ElenaLib.h:383</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_a5fe99bc2cf71bde7006f2f08e23de02b"><div class="ttname"><a href="_elena_lib_8h.html#a5fe99bc2cf71bde7006f2f08e23de02b">DrawSun</a></div><div class="ttdeci">void DrawSun(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF centreColor, COLORREF luchColor, double luch, double eyes, double smile)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00095">ElenaLib.h:95</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_a7a192061b5403056e8ef476270ff69ec"><div class="ttname"><a href="_elena_lib_8h.html#a7a192061b5403056e8ef476270ff69ec">DrawBackground</a></div><div class="ttdeci">void DrawBackground(COLORREF skyColor, COLORREF GruntColor)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00064">ElenaLib.h:64</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_a7eb0d17a61c68ca4185141d8346470d4"><div class="ttname"><a href="_elena_lib_8h.html#a7eb0d17a61c68ca4185141d8346470d4">DrawWood</a></div><div class="ttdeci">void DrawWood(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF stvolColor, COLORREF listColor, double stvol, double sheet)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00263">ElenaLib.h:263</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_a981997e01570337a4863ec99c4f69cfa"><div class="ttname"><a href="_elena_lib_8h.html#a981997e01570337a4863ec99c4f69cfa">DrawBird</a></div><div class="ttdeci">void DrawBird(int x, int y, double sizeX, double sizeY, COLORREF telocolor, double fly)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00142">ElenaLib.h:142</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_ab08cf5f7bdcd1cbcd6451214af9325db"><div class="ttname"><a href="_elena_lib_8h.html#ab08cf5f7bdcd1cbcd6451214af9325db">DrawCat</a></div><div class="ttdeci">void DrawCat(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF mordochkaColor, double dlinausov, double usymove, double paws, double lips)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00307">ElenaLib.h:307</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_ae20e1a6c0c33e69faa263157078fd6ff"><div class="ttname"><a href="_elena_lib_8h.html#ae20e1a6c0c33e69faa263157078fd6ff">DrawMouse</a></div><div class="ttdeci">void DrawMouse(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF teloColor, COLORREF eyasColor, double head, double hvost, double telo)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00453">ElenaLib.h:453</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_af56c89adde009e3402306ddf0f9fac51"><div class="ttname"><a href="_elena_lib_8h.html#af56c89adde009e3402306ddf0f9fac51">DrawHouse</a></div><div class="ttdeci">void DrawHouse(int x, int y, double sizeR, double sizeX, double sizeY, COLORREF domColor, COLORREF roofColor, COLORREF windowColor)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00180">ElenaLib.h:180</a></div></div>
+<div class="ttc" id="a_elena_lib_8h_html_afba5c4242471945ae9c8d80a18643061"><div class="ttname"><a href="_elena_lib_8h.html#afba5c4242471945ae9c8d80a18643061">DrawFence</a></div><div class="ttdeci">void DrawFence(int x, int y, double sizeX, double sizeY, COLORREF zaborColor)</div><div class="ttdef"><b>Definition:</b> <a href="_elena_lib_8h_source.html#l00223">ElenaLib.h:223</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
